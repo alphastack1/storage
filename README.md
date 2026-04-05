@@ -28,4 +28,3 @@ A 1-bit LLM that runs entirely on your phone. No cloud, no internet needed.
 | Architecture | arm64-v8a only |
 | Version | 1.0.0 |
 
-Source: [bonsai-llm](https://github.com/alphastack1/bonsai-llm)
