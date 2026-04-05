@@ -51,4 +51,16 @@ gh release create <new-tag> ./updated-file.apk \
   --notes "What changed"
 ```
 
+### If `gh` CLI has OAuth/auth issues
+
+Create the release manually via the GitHub web UI instead:
+
+1. Go to `https://github.com/alphastack1/storage/releases/new`
+2. Create a new tag (e.g. `my-project-v1.0.0`)
+3. Set the release title and description
+4. Upload the file via "Attach binaries by dropping them here or selecting them"
+5. Click **Publish release**
+
+If using an AI assistant with a Chrome MCP tool, it can automate this — use `file_upload` on the release assets file input element, then click Publish.
+
 > **Why Releases instead of branch commits?** GitHub rejects files over 100MB in regular commits. Releases support up to 2GB per asset.
