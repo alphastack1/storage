@@ -1,27 +1,31 @@
 # Bonsai LLM - Android APK
 
-This branch hosts the release APK for [Bonsai LLM](https://github.com/alphastack1/bonsai-llm), an Android app for running large language models locally on-device.
+A 1-bit LLM that runs entirely on your phone. No cloud, no internet needed.
 
 ## Download
 
-```
-https://github.com/alphastack1/storage/raw/bonsai-llm/bonsai-llm.apk
-```
+**[Download APK (v1.0.0)](https://github.com/alphastack1/storage/releases/download/bonsai-llm-v1.0.0/bonsai-llm.apk)** (~254 MB)
 
-## Contents
+## What's Inside
 
-| File | Description | Status |
-|------|-------------|--------|
-| `bonsai-llm.apk` | Android release APK (~254 MB) | **Not yet uploaded** |
+- **Bonsai 1.7B** — PrismML's 1-bit quantized model (bundled, works offline)
+- **llama.cpp** inference engine compiled for ARM64
+- Full chat UI with markdown rendering, code highlighting, chat history
 
-## Notes
+## Install
 
-- The APK file has not been added yet. It needs to be built and placed here.
-- To add the APK, copy it to this branch's working directory and commit:
-  ```bash
-  git checkout bonsai-llm
-  cp /path/to/bonsai-llm.apk .
-  git add bonsai-llm.apk
-  git commit -m "Add Bonsai LLM APK vX.Y.Z"
-  git push origin bonsai-llm
-  ```
+1. Download the APK to your phone
+2. Tap to install (enable "Install from unknown sources" if prompted)
+3. Open — model loads automatically on first launch (~30s)
+4. Chat!
+
+## Details
+
+| | |
+|---|---|
+| Package | `com.bonsai.llm` |
+| Min Android | 9 (API 28) |
+| Architecture | arm64-v8a only |
+| Version | 1.0.0 |
+
+Source: [bonsai-llm](https://github.com/alphastack1/bonsai-llm)
