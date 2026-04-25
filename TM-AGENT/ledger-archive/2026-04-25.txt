@@ -1,0 +1,33 @@
+===TRUTHMACHINE AGENT LEDGER===
+Last-updated: 2026-04-25T20:35:00Z
+
+---STANDING DIRECTIVES---
+- PnL source-of-truth: website > API. /api/bot/status returns a buggy unrealizedPnl field; derive unrealized = totalPnl - realizedPnl instead. (Remove this directive once the API bug is fixed.)
+- Composio MCP: this Routine uses the TruthMachine Composio account via API key (ck_TPj...); the gradecoach Composio account is for the OTHER agent and must not be used here.
+
+---STATE---
+Day-N: 18
+Last-balance: $32.46
+Last-deployed: $68.34
+Last-total-pnl: -$13.09
+Last-realized-pnl: -$8.45
+Last-unrealized-pnl: -$4.64
+Last-open-positions: 13
+Refresh-triggered-at: 2026-04-25T20:05:41Z
+Refresh-cycleId: rc_1777147529446_u8l8h0
+Refresh-status: triggered
+Bot-cycle-triggered-at: 2026-04-25T20:33:50Z
+Bot-cycleId: cycle_1777149230982_cukzd3
+
+---RUN LOG (most recent first, ~30 entries max)---
+2026-04-25 | day:18 | bought:0 | sold:0 | reviewed:2 | pnl:T-13.09/R-8.45/U-4.64 | notes:5 buy candidates; 3 thin-bid skipped, 2 btc-updown errs; 2 holds iran/israel
+2026-04-24 | day:17 | bought:0 | sold:0 | reviewed:2 | pnl:T-13.09/R-8.45/U-4.64 | notes:2 buy attempts errored btc-updown markets not active; 2 holds iran/israel
+2026-04-23 | day:16 | bought:0 | sold:0 | reviewed:0 | pnl:T-13.09/R-8.45/U-4.64 | notes:skipped - Routine A saw TM down; cached state
+2026-04-22 | day:15 | bought:0 | sold:0 | reviewed:0 | pnl:T-13.09/R-8.45/U-4.64 | notes:skipped - Routine A saw TM down (503); cached state
+2026-04-21 | day:14 | bought:0 | sold:0 | reviewed:2 | pnl:T-13.09/R-8.45/U-4.64 | notes:clean run; 1 err btc-updown-5m not open; bal $32.46 open 13; 2 positions resolved overnight
+2026-04-20 | day:13 | bought:0 | sold:0 | reviewed:0 | pnl:T-6.17/R-1.53/U-4.64 | notes:TM degraded, bot/cycle+bot/status 503 DNS overflow; PnL cached
+2026-04-20 | day:13 | pillar:skipped(composio) | asset:none | bought:0 | sold:0 | pnl:T-6.17/R-1.53/U-4.64 | notes:cycle 0b/0s/5r hold; Composio MCP auth required; IG skipped
+2026-04-19 | day:12 | pillar:skipped | asset:none | bought:0 | sold:0 | pnl:T-6.17/R-1.53/U-4.64 | notes:2nd fire ~4h after 06:12Z post; IG post skipped (1/day cap); TM ops clean
+2026-04-19 | day:12 | pillar:Meta | asset:generated-text-card | bought:0 | sold:0 | pnl:T-6.17/R-1.53/U-4.64 | notes:first live post - "21 data sources. One probability." https://www.instagram.com/p/DXTYFT8lF7b/
+
+===END LEDGER===
