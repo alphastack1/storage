@@ -1,0 +1,1 @@
+{"ts": "2026-04-26T20:38:00Z", "day": 19, "tm_status": "partial", "cycle": {"id": "ERROR-503", "bought": 0, "sold": 0, "reviewed": 0, "errors": 1, "resolved_redeemed": 0}, "balance": 46.75, "open_positions": 11, "total_pnl": -9.65, "realized_pnl": -5.01, "unrealized_pnl": -4.64, "ledger_status": "edited", "ledger_message_id": 8}
