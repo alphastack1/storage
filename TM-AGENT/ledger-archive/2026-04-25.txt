@@ -1,18 +1,20 @@
 ===TRUTHMACHINE AGENT LEDGER===
-Last-updated: 2026-04-25T20:35:00Z
+Last-updated: 2026-04-25T20:55:00Z
 
 ---STANDING DIRECTIVES---
-- PnL source-of-truth: website > API. /api/bot/status returns a buggy unrealizedPnl field; derive unrealized = totalPnl - realizedPnl instead. (Remove this directive once the API bug is fixed.)
+- TM auto-reconciles resolved positions every refresh-cycle (deploy 3b94360, 2026-04-25). If a daily report shows REDEMPTION PENDING, that's a bug — investigate immediately.
+- Bot-status API still returns buggy unrealizedPnl (2026-04-25 sample: API=$2.41 vs derived=-$4.64). Until they match within $0.01, derive unrealized = totalPnl - realizedPnl.
+- NegRisk redemption path still unverified — first negRisk resolution will be the canary (likely Israel-strike or CA gov). If it fails, fix the negRisk path.
 - Composio MCP: this Routine uses the TruthMachine Composio account via API key (ck_TPj...); the gradecoach Composio account is for the OTHER agent and must not be used here.
 
 ---STATE---
 Day-N: 18
-Last-balance: $32.46
-Last-deployed: $68.34
-Last-total-pnl: -$13.09
-Last-realized-pnl: -$8.45
+Last-balance: $46.75
+Last-deployed: $58.78
+Last-total-pnl: -$9.65
+Last-realized-pnl: -$5.01
 Last-unrealized-pnl: -$4.64
-Last-open-positions: 13
+Last-open-positions: 11
 Refresh-triggered-at: 2026-04-25T20:05:41Z
 Refresh-cycleId: rc_1777147529446_u8l8h0
 Refresh-status: triggered
@@ -20,7 +22,7 @@ Bot-cycle-triggered-at: 2026-04-25T20:33:50Z
 Bot-cycleId: cycle_1777149230982_cukzd3
 
 ---RUN LOG (most recent first, ~30 entries max)---
-2026-04-25 | day:18 | bought:0 | sold:0 | reviewed:2 | pnl:T-13.09/R-8.45/U-4.64 | notes:5 buy candidates; 3 thin-bid skipped, 2 btc-updown errs; 2 holds iran/israel
+2026-04-25 | day:18 | bought:0 | sold:0 | reviewed:2 | pnl:T-9.65/R-5.01/U-4.64 | notes:cycle 0/0/2 (3 thin-bid skips, 2 btc-updown errs, 2 holds); post-cycle deploys 3b94360+c93d860+01ab65b live; admin sync claimed us-iran +$13 (tx 0x1551..) portland -$4.88 loss; bal $46.75 open 11 closed 6
 2026-04-24 | day:17 | bought:0 | sold:0 | reviewed:2 | pnl:T-13.09/R-8.45/U-4.64 | notes:2 buy attempts errored btc-updown markets not active; 2 holds iran/israel
 2026-04-23 | day:16 | bought:0 | sold:0 | reviewed:0 | pnl:T-13.09/R-8.45/U-4.64 | notes:skipped - Routine A saw TM down; cached state
 2026-04-22 | day:15 | bought:0 | sold:0 | reviewed:0 | pnl:T-13.09/R-8.45/U-4.64 | notes:skipped - Routine A saw TM down (503); cached state
