@@ -1,0 +1,33 @@
+{
+  "accepted": true,
+  "cycleId": "rc_1777406536179_bwq8dq",
+  "config": {
+    "staleMaxAge": 24,
+    "stalePct": 33,
+    "volumePct": 34,
+    "newPct": 33,
+    "batchSize": 60,
+    "minVolume": 50000,
+    "categories": [],
+    "dryRun": false,
+    "delayMs": 5000
+  },
+  "summary": {
+    "newDiscoveries": 7,
+    "volumeRefreshes": 20,
+    "staleRefreshes": 20,
+    "totalMarkets": 47
+  },
+  "resolvedSync": {
+    "checked": 11,
+    "resolved": 0,
+    "redeemed": 0,
+    "totalRedeemedUsd": 0,
+    "errors": [],
+    "details": []
+  },
+  "message": "Refresh cycle started. 47 markets will be processed in the background.",
+  "http_status": 202,
+  "captured_at": "2026-04-28T20:02:17Z",
+  "trigger_routine": "A"
+}
