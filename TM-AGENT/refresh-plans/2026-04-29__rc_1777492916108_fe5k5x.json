@@ -1,0 +1,53 @@
+{
+  "accepted": true,
+  "cycleId": "rc_1777492916108_fe5k5x",
+  "triggered_at": "2026-04-29T20:02:13Z",
+  "http_status": 202,
+  "config": {
+    "staleMaxAge": 24,
+    "stalePct": 33,
+    "volumePct": 34,
+    "newPct": 33,
+    "batchSize": 60,
+    "minVolume": 50000,
+    "categories": [],
+    "dryRun": false,
+    "delayMs": 5000
+  },
+  "summary": {
+    "newDiscoveries": 7,
+    "volumeRefreshes": 20,
+    "staleRefreshes": 20,
+    "totalMarkets": 47
+  },
+  "resolvedSync": {
+    "checked": 11,
+    "resolved": 0,
+    "redeemed": 0,
+    "totalRedeemedUsd": 0,
+    "errors": []
+  },
+  "sharesSync": {
+    "checked": 11,
+    "adjusted": 4,
+    "errors": [],
+    "details": [
+      {"slug": "arne-slot-out-as-liverpool-manager-by-may-31-2026", "sharesBefore": 19, "sharesAfter": 17.9375, "diff": -1.0625},
+      {"slug": "iran-leadership-change-by--iran-leadership-change-by-april-30", "sharesBefore": 35, "sharesAfter": 6.666665, "diff": -28.333335},
+      {"slug": "how-many-different-countries-will-israel-strike-in-2026--will-israel-strike-3-countries-in-2026", "sharesBefore": 41, "sharesAfter": 1.100839, "diff": -39.899161},
+      {"slug": "california-governor-election-2026--will-eric-swalwell-win-the-california-governor-election-in-2026", "sharesBefore": 8, "sharesAfter": 0.333332, "diff": -7.666668}
+    ]
+  },
+  "plan_top10": [
+    {"slug": "what-price-will-bitcoin-hit-in-april-2026--will-bitcoin-reach-80k-in-april-2026-794", "type": "new-discovery", "volume": 8268234.80},
+    {"slug": "clavicular-pregnancy-in-2026", "type": "new-discovery", "volume": 6707687.71},
+    {"slug": "cricipl-mum-sun-2026-04-29--cricipl-mum-sun-2026-04-29", "type": "new-discovery", "volume": 2820388.98},
+    {"slug": "largest-company-end-of-april-738--will-microsoft-be-the-largest-company-in-the-world-by-market-cap-on-april-30-511", "type": "new-discovery", "volume": 2476892.19},
+    {"slug": "cs2-vit-fut-2026-04-29--cs2-vit-fut-2026-04-29", "type": "new-discovery", "volume": 1440946.69},
+    {"slug": "will-jesus-christ-return-before-2027", "type": "volume-refresh", "volume": 60702876.82},
+    {"slug": "will-the-iranian-regime-fall-by-april-30", "type": "volume-refresh", "volume": 51053618.93},
+    {"slug": "democratic-presidential-nominee-2028--will-oprah-winfrey-win-the-2028-democratic-presidential-nomination", "type": "volume-refresh", "volume": 49514614.17},
+    {"slug": "presidential-election-winner-2028--will-lebron-james-win-the-2028-us-presidential-election", "type": "volume-refresh", "volume": 48898753.01},
+    {"slug": "republican-presidential-nominee-2028--will-mike-pence-win-the-2028-republican-presidential-nomination", "type": "volume-refresh", "volume": 39463720.13}
+  ]
+}
