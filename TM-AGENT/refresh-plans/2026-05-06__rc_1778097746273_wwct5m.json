@@ -1,0 +1,340 @@
+{
+  "accepted": true,
+  "cycleId": "rc_1778097746273_wwct5m",
+  "config": {
+    "staleMaxAge": 24,
+    "stalePct": 33,
+    "volumePct": 34,
+    "newPct": 33,
+    "batchSize": 60,
+    "minVolume": 50000,
+    "categories": [],
+    "dryRun": false,
+    "delayMs": 5000,
+    "secret": "2G1c!"
+  },
+  "plan": [
+    {
+      "slug": "cricipl-sun-pun-2026-05-06--cricipl-sun-pun-2026-05-06",
+      "question": "Indian Premier League: Sunrisers Hyderabad vs Punjab Kings",
+      "type": "new-discovery",
+      "volume": 2026524.0627679962
+    },
+    {
+      "slug": "will-the-us-invade-cuba-in-2026",
+      "question": "Will the U.S. invade Cuba in 2026?",
+      "type": "new-discovery",
+      "volume": 1694597.2902230325
+    },
+    {
+      "slug": "nba-phi-nyk-2026-05-06--nba-phi-nyk-2026-05-06",
+      "question": "76ers vs. Knicks",
+      "type": "new-discovery",
+      "volume": 1647965.7887909971
+    },
+    {
+      "slug": "mlb-world-series-champion-2026--will-the-chicago-white-sox-win-the-2026-world-series",
+      "question": "Will the Chicago White Sox win the 2026 World Series?",
+      "type": "new-discovery",
+      "volume": 1438568.5957640072
+    },
+    {
+      "slug": "us-recession-by-end-of-2026",
+      "question": "US recession by end of 2026?",
+      "type": "new-discovery",
+      "volume": 1431677.8014199976
+    },
+    {
+      "slug": "elon-musk-of-tweets-may-1-may-8--elon-musk-of-tweets-may-1-may-8-100-119",
+      "question": "Will Elon Musk post 100-119 tweets from May 1 to May 8, 2026?",
+      "type": "new-discovery",
+      "volume": 786707.4903720005
+    },
+    {
+      "slug": "highest-grossing-movie-in-2026--will-wuthering-heights-be-the-top-grossing-movie-of-2026",
+      "question": "Will Wuthering Heights be the top grossing movie of 2026?",
+      "type": "new-discovery",
+      "volume": 779371.0349190012
+    },
+    {
+      "slug": "uefa-champions-league-team-to-reach-final--will-bayern-mnchen-reach-the-uefa-champions-league-final",
+      "question": "Will Bayern München reach the UEFA Champions League final?",
+      "type": "new-discovery",
+      "volume": 473554.4236400005
+    },
+    {
+      "slug": "chungcheongnam-province-governor-election-winner--will-park-soo-hyun-win-the-2026-chungcheongnam-province-gubernatorial-election",
+      "question": "Will Park Soo-hyun win the 2026 Chungcheongnam Province gubernatorial election?",
+      "type": "new-discovery",
+      "volume": 380926.68168300064
+    },
+    {
+      "slug": "nhl-eastern-conference-champion-198--will-the-buffalo-sabres-win-the-eastern-conference",
+      "question": "Will the Buffalo Sabres win the Eastern Conference?",
+      "type": "new-discovery",
+      "volume": 205228.492351
+    },
+    {
+      "slug": "democratic-presidential-nominee-2028--will-oprah-winfrey-win-the-2028-democratic-presidential-nomination",
+      "question": "Will Oprah Winfrey win the 2028 Democratic presidential nomination?",
+      "type": "volume-refresh",
+      "volume": 49841668.922308035
+    },
+    {
+      "slug": "republican-presidential-nominee-2028--will-mike-pence-win-the-2028-republican-presidential-nomination",
+      "question": "Will Mike Pence win the 2028 Republican presidential nomination?",
+      "type": "volume-refresh",
+      "volume": 39860317.881232746
+    },
+    {
+      "slug": "will-trump-acquire-greenland-before-2027",
+      "question": "Will Trump acquire Greenland before 2027?",
+      "type": "volume-refresh",
+      "volume": 32957161.656573292
+    },
+    {
+      "slug": "uefa-champions-league-winner--will-club-brugge-win-the-202526-champions-league",
+      "question": "Will Club Brugge win the 2025–26 Champions League?",
+      "type": "volume-refresh",
+      "volume": 19187859.197014894
+    },
+    {
+      "slug": "will-the-iranian-regime-fall-by-may-31",
+      "question": "Will the Iranian regime fall by May 31?",
+      "type": "volume-refresh",
+      "volume": 16390863.022087596
+    },
+    {
+      "slug": "2026-nhl-stanley-cup-champion--will-the-colorado-avalanche-win-the-2026-nhl-stanley-cup",
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "type": "volume-refresh",
+      "volume": 14093228.443023052
+    },
+    {
+      "slug": "what-will-happen-before-gta-vi--will-jesus-christ-return-before-gta-vi-665",
+      "question": "Will Jesus Christ return before GTA VI?",
+      "type": "volume-refresh",
+      "volume": 11209857.964138936
+    },
+    {
+      "slug": "2026-f1-drivers-champion--will-valtteri-bottas-be-the-2026-f1-drivers-champion",
+      "question": "Will Valtteri Bottas be the 2026 F1 Drivers' Champion?",
+      "type": "volume-refresh",
+      "volume": 9937340.631886318
+    },
+    {
+      "slug": "will-the-us-acquire-any-part-of-greenland-in-2026",
+      "question": "Will the US acquire part of Greenland in 2026?",
+      "type": "volume-refresh",
+      "volume": 9761176.359346999
+    },
+    {
+      "slug": "us-obtains-iranian-enriched-uranium-by--us-obtains-iranian-enriched-uranium-by-may-31-396",
+      "question": "US obtains Iranian enriched uranium by May 31?",
+      "type": "volume-refresh",
+      "volume": 9441265.975010877
+    },
+    {
+      "slug": "brazil-presidential-election--will-tarcisio-de-frietas-win-the-2026-brazilian-presidential-election",
+      "question": "Will Tarcisio de Freitas win the 2026 Brazilian presidential election?",
+      "type": "volume-refresh",
+      "volume": 9348556.916823044
+    },
+    {
+      "slug": "xi-jinping-out-before-2027",
+      "question": "Xi Jinping out before 2027?",
+      "type": "volume-refresh",
+      "volume": 9050611.621010723
+    },
+    {
+      "slug": "strait-of-hormuz-traffic-returns-to-normal-by-may-15",
+      "question": "Strait of Hormuz traffic returns to normal by May 15?",
+      "type": "volume-refresh",
+      "volume": 9020766.590597961
+    },
+    {
+      "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
+      "question": "Strait of Hormuz traffic returns to normal by end of May?",
+      "type": "volume-refresh",
+      "volume": 8213646.051981884
+    },
+    {
+      "slug": "russia-x-ukraine-ceasefire-by-june-30-2026",
+      "question": "Russia x Ukraine ceasefire by June 30, 2026?",
+      "type": "volume-refresh",
+      "volume": 8112637.907415003
+    },
+    {
+      "slug": "trump-out-as-president-before-2027",
+      "question": "Trump out as President before 2027?",
+      "type": "volume-refresh",
+      "volume": 8107027.480903245
+    },
+    {
+      "slug": "2026-mens-french-open-winner--will-lorenzo-musetti-win-the-2026-mens-french-open",
+      "question": "Will Lorenzo Musetti win the 2026 Men's French Open?",
+      "type": "volume-refresh",
+      "volume": 8090247.314569
+    },
+    {
+      "slug": "which-companies-will-be-acquired-before-2027--will-nebius-group-be-acquired-before-2027-514",
+      "question": "Will Nebius Group be acquired before 2027?",
+      "type": "volume-refresh",
+      "volume": 7914087.694083053
+    },
+    {
+      "slug": "will-china-invade-taiwan-by-june-30-2026",
+      "question": "Will China invade Taiwan by June 30, 2026?",
+      "type": "volume-refresh",
+      "volume": 7420772.176125035
+    },
+    {
+      "slug": "eurovision-winner-2026--will-austria-win-eurovision-2026",
+      "question": "Will Austria win Eurovision 2026?",
+      "type": "volume-refresh",
+      "volume": 6820163.741098896
+    },
+    {
+      "slug": "augusta-national-invitational-winner--will-xander-schauffele-win-the-2026-masters-tournament",
+      "question": "Will Xander Schauffele win the 2026 Masters tournament?",
+      "type": "stale-refresh",
+      "age": "30d ago"
+    },
+    {
+      "slug": "us-obtains-iranian-enriched-uranium-by-may-31",
+      "question": "US obtains Iranian enriched uranium by May 31?",
+      "type": "stale-refresh",
+      "age": "28d ago"
+    },
+    {
+      "slug": "spacex-ipo-by--will-spacex-ipo-by-june-30-2026-372-264-619",
+      "question": "Will SpaceX IPO by June 30, 2026?",
+      "type": "stale-refresh",
+      "age": "20d ago"
+    },
+    {
+      "slug": "us-x-iran-diplomatic-meeting-by-329--us-x-iran-diplomatic-meeting-by-april-18-2026-456",
+      "question": "US x Iran diplomatic meeting by April 18, 2026?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "la-liga-top-goalscorer--will-oihan-sancet-be-the-top-goal-scorer-in-the-202526-la-liga-season",
+      "question": "Will Oihan Sancet be the top goal scorer in the 2025–26 La Liga season?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "which-countries-will-send-warships-through-the-strait-of-hormuz-by-april-30--will-the-united-kingdom-send-warships-through-the-strait-of-hormuz-by-april-30-2026",
+      "question": "Will the United Kingdom send warships through the Strait of Hormuz by April 30, 2026?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "english-premier-league-top-goalscorer--will-alexander-isak-be-the-top-goal-scorer-in-the-202526-english-premier-league-season",
+      "question": "Will Alexander Isak be the top goal scorer in the 2025–26 English Premier League season?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "next-james-bond-actor-635--henry-cavill-announced-as-next-james-bond-857-642",
+      "question": "Henry Cavill announced as next James Bond?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "champions-league-top-scorer-655--will-desire-doue-be-the-20252026-top-ucl-goal-scorer",
+      "question": "Will Desire Doue be the 2025/2026 top UCL goal scorer?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "iran-military-action-against-by-april-30--will-iran-strike-bahrain-by-april-30-2026-553",
+      "question": "Will Iran strike Bahrain by April 30, 2026?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "2026-nba-champion--will-the-charlotte-hornets-win-the-2026-nba-finals",
+      "question": "Will the Charlotte Hornets win the 2026 NBA Finals?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "atp-zhou-kotov-2026-04-12--atp-zhou-kotov-2026-04-12-match-total-21pt5",
+      "question": "Zhou vs. Kotov: Match O/U 21.5",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "nba-western-conference-champion-933--will-the-golden-state-warriors-win-the-nba-western-conference-finals",
+      "question": "Will the Golden State Warriors win the NBA Western Conference Finals?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "peru-presidential-election-winner--will-rafael-lpez-aliaga-win-the-2026-peruvian-presidential-election",
+      "question": "Will Rafael López Aliaga win the 2026 Peruvian presidential election?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "nba-rookie-of-the-year-873--will-kon-knueppel-win-the-202526-nba-rookie-of-the-year-award",
+      "question": "Will Kon Knueppel win the 2025–26 NBA Rookie of the Year award?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "will-betmoar-launch-a-token-by--will-betmoar-launch-a-token-by-december-31-2026",
+      "question": "Will Betmoar launch a token by December 31, 2026?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "what-will-spacexs-ipo-valuation-be--will-spacexs-ipo-valuation-be-between-1pt50t-and-1pt75t",
+      "question": "Will SpaceX’s IPO valuation be between 1.50T and 1.75T?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "highest-domestically-grossing-april-film-on-may-31--will-the-super-mario-galaxy-movie-be-the-april-film-with-the-highest-domestic-gross-on-may-31",
+      "question": "Will \"The Super Mario Galaxy Movie\" be the April film with the highest domestic gross on May 31?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "will-trump-dance-during-national-agriculture-day-event",
+      "question": "Will Trump dance during National Agriculture Day event?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "when-will-the-dhs-shutdown-end-521--will-the-dhs-shutdown-end-between-april-9-12-2026-277",
+      "question": "Will the DHS shutdown end between April 9-12, 2026?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    }
+  ],
+  "summary": {
+    "newDiscoveries": 10,
+    "volumeRefreshes": 20,
+    "staleRefreshes": 20,
+    "totalMarkets": 50
+  },
+  "resolvedSync": {
+    "checked": 9,
+    "resolved": 0,
+    "redeemed": 0,
+    "totalRedeemedUsd": 0,
+    "errors": [],
+    "details": []
+  },
+  "sharesSync": {
+    "checked": 9,
+    "adjusted": 0,
+    "errors": [],
+    "details": []
+  },
+  "message": "Refresh cycle started. 50 markets will be processed in the background."
+}
+
