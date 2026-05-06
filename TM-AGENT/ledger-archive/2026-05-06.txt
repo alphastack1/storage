@@ -1,0 +1,25 @@
+===TRUTHMACHINE AGENT LEDGER===
+Last-updated: 2026-05-06T05:40:30Z
+
+---STANDING DIRECTIVES---
+- TM trades on Polymarket CLOB V2 (deploy 76f9081, 2026-04-28). Collateral is pUSD. Any error string containing 'order_version_mismatch' is a critical V2 regression — flag immediately.
+- TM auto-reconciles resolved positions and position shares every refresh-cycle (deploys 3b94360 + 3b6b60b). If a daily report shows REDEMPTION PENDING for a closed market, or persistent 'balance is not enough — balance: X, order amount: Y' errors, that's a bug — investigate.
+
+---STATE---
+Day-N: 29
+Last-balance: $64.70
+Last-deployed: $39.36
+Last-total-pnl: $-6.69
+Last-realized-pnl: $-3.49
+Last-unrealized-pnl: $-3.19
+Last-open-positions: 9
+Refresh-triggered-at: missing — Routine A didn't run today (last: 2026-04-30T20:13:14Z)
+Refresh-cycleId:
+Refresh-status: missing
+Bot-cycle-triggered-at: skipped
+Bot-cycleId: skipped
+
+---RUN LOG (most recent first, ~30 entries max)---
+2026-05-06 | day:29 | bought:0 | sold:0 | reviewed:0 | pnl:T-6.69/R-3.49/U-3.19 | notes:bootstrap, Routine A missing >5d
+
+===END LEDGER===
