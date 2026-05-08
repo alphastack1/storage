@@ -1,0 +1,45 @@
+{
+  "accepted": true,
+  "cycleId": "rc_1778270725911_9znjm5",
+  "http_status": 202,
+  "triggered_at_utc": "2026-05-08T20:05:51Z",
+  "config": {
+    "staleMaxAge": 24,
+    "stalePct": 33,
+    "volumePct": 34,
+    "newPct": 33,
+    "batchSize": 60,
+    "minVolume": 50000,
+    "categories": [],
+    "dryRun": false,
+    "delayMs": 5000
+  },
+  "summary": {
+    "newDiscoveries": 9,
+    "volumeRefreshes": 20,
+    "staleRefreshes": 20,
+    "totalMarkets": 49
+  },
+  "resolvedSync": {
+    "checked": 8,
+    "resolved": 0,
+    "redeemed": 0,
+    "totalRedeemedUsd": 0,
+    "errors": [],
+    "details": []
+  },
+  "sharesSync": {
+    "checked": 8,
+    "adjusted": 1,
+    "errors": [],
+    "details": [
+      {
+        "slug": "arne-slot-out-as-liverpool-manager-by-may-31-2026",
+        "sharesBefore": 17.9375,
+        "sharesAfter": 0.0075,
+        "diff": -17.93
+      }
+    ]
+  },
+  "message": "Refresh cycle started. 49 markets will be processed in the background."
+}
