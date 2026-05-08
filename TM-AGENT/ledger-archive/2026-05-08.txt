@@ -1,0 +1,27 @@
+===TRUTHMACHINE AGENT LEDGER===
+Last-updated: 2026-05-08T20:38:00Z
+
+---STANDING DIRECTIVES---
+- TM trades on Polymarket CLOB V2 (deploy 76f9081, 2026-04-28). Collateral is pUSD. Any error string containing 'order_version_mismatch' is a critical V2 regression — flag immediately.
+- TM auto-reconciles resolved positions and position shares every refresh-cycle (deploys 3b94360 + 3b6b60b). If a daily report shows REDEMPTION PENDING for a closed market, or persistent 'balance is not enough — balance: X, order amount: Y' errors, that's a bug — investigate.
+
+---STATE---
+Day-N: 31
+Last-balance: $87.77
+Last-deployed: $31.46
+Last-total-pnl: $4.68
+Last-realized-pnl: $2.31
+Last-unrealized-pnl: $2.37
+Last-open-positions: 7
+Refresh-triggered-at: 2026-05-08T20:05:51Z
+Refresh-cycleId: rc_1778270725911_9znjm5
+Refresh-status: triggered
+Bot-cycle-triggered-at: 2026-05-08T20:36:09Z
+Bot-cycleId: cycle_1778272569116_91oz43
+
+---RUN LOG (most recent first, ~30 entries max)---
+2026-05-08 | day:31 | bought:0 | sold:1 | reviewed:1 | pnl:T4.68/R2.31/U2.37 | notes:Slot YES expired_dust; Israel GTC@16c; 2 resolved+redeemed observed
+2026-05-07 | day:30 | bought:0 | sold:1 | reviewed:2 | pnl:T-0.93/R2.32/U-3.24 | notes:Swalwell NO expired_dust closed; 2 GTC holds
+2026-05-06 | day:29 | bought:0 | sold:0 | reviewed:3 | pnl:T-1.53/R2.32/U-3.85 | notes:2 redemptions, 1 GTC fail (swalwell invalid amounts)
+
+===END LEDGER===
