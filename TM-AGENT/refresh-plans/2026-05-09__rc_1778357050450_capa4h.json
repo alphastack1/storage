@@ -1,0 +1,38 @@
+{
+  "accepted": true,
+  "cycleId": "rc_1778357050450_capa4h",
+  "http_status": 202,
+  "triggered_at_utc": "2026-05-09T20:04:13Z",
+  "config": {
+    "staleMaxAge": 24,
+    "stalePct": 33,
+    "volumePct": 34,
+    "newPct": 33,
+    "batchSize": 60,
+    "minVolume": 50000,
+    "categories": [],
+    "dryRun": false,
+    "delayMs": 5000
+  },
+  "summary": {
+    "newDiscoveries": 9,
+    "volumeRefreshes": 20,
+    "staleRefreshes": 20,
+    "totalMarkets": 49
+  },
+  "resolvedSync": {
+    "checked": 7,
+    "resolved": 0,
+    "redeemed": 0,
+    "totalRedeemedUsd": 0,
+    "errors": [],
+    "details": []
+  },
+  "sharesSync": {
+    "checked": 7,
+    "adjusted": 0,
+    "errors": [],
+    "details": []
+  },
+  "message": "Refresh cycle started. 49 markets will be processed in the background."
+}
