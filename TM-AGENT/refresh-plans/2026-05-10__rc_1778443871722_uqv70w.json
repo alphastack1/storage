@@ -1,0 +1,62 @@
+{
+  "ts": "2026-05-10T20:11:22Z",
+  "cycleId": "rc_1778443871722_uqv70w",
+  "httpStatus": 202,
+  "response": {
+    "accepted": true,
+    "cycleId": "rc_1778443871722_uqv70w",
+    "config": {
+      "staleMaxAge": 24,
+      "stalePct": 33,
+      "volumePct": 34,
+      "newPct": 33,
+      "batchSize": 60,
+      "minVolume": 50000,
+      "categories": [],
+      "dryRun": false,
+      "delayMs": 5000
+    },
+    "summary": {
+      "newDiscoveries": 16,
+      "volumeRefreshes": 20,
+      "staleRefreshes": 20,
+      "totalMarkets": 56
+    },
+    "resolvedSync": {
+      "checked": 7,
+      "resolved": 1,
+      "redeemed": 0,
+      "totalRedeemedUsd": 0,
+      "errors": [],
+      "details": [
+        {
+          "slug": "how-many-different-countries-will-israel-strike-in-2026--will-israel-strike-3-countries-in-2026",
+          "side": "YES",
+          "won": false,
+          "payoutUsd": 0,
+          "txHash": null
+        }
+      ]
+    },
+    "sharesSync": {
+      "checked": 6,
+      "adjusted": 0,
+      "errors": [],
+      "details": []
+    },
+    "message": "Refresh cycle started. 56 markets will be processed in the background."
+  },
+  "tm_health_snapshot": {
+    "balance": 87.770583,
+    "polBalance": 113.68834504748938,
+    "openPositionCount": 7,
+    "closedPositionCount": 8,
+    "totalPnl": 3.7416334400000046,
+    "totalRealizedPnl": 2.313734120000004,
+    "unrealizedPnl": 1.4278993200000005,
+    "totalCycles": 73,
+    "totalTrades": 22,
+    "lastCycleAt": "2026-05-09T20:34:35.021Z",
+    "winRate": 0.5
+  }
+}
