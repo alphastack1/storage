@@ -1,0 +1,399 @@
+{
+  "accepted": true,
+  "cycleId": "rc_1778702718369_ocfkgc",
+  "config": {
+    "staleMaxAge": 24,
+    "stalePct": 33,
+    "volumePct": 34,
+    "newPct": 33,
+    "batchSize": 60,
+    "minVolume": 50000,
+    "categories": [],
+    "dryRun": false,
+    "delayMs": 5000,
+    "secret": "2G1c!"
+  },
+  "plan": [
+    {
+      "slug": "will-the-us-invade-iran-before-2027",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "type": "new-discovery",
+      "volume": 27990487.634603564
+    },
+    {
+      "slug": "which-companies-will-be-acquired-before-2027--will-nebius-group-be-acquired-before-2027-514-765",
+      "question": "Will Nebius Group be acquired before 2027?",
+      "type": "new-discovery",
+      "volume": 7915044.532704065
+    },
+    {
+      "slug": "will-reza-pahlavi-enter-iran-by-june-30--will-reza-pahlavi-enter-iran-by-june-30-555-947-362-379-213",
+      "question": "Will Reza Pahlavi enter Iran by June 30?",
+      "type": "new-discovery",
+      "volume": 4218053.305275009
+    },
+    {
+      "slug": "cl-hit-jun-2026--will-crude-oil-cl-hit-high-200-by-end-of-june-677",
+      "question": "Will Crude Oil (CL) hit (HIGH) $200 by end of June?",
+      "type": "new-discovery",
+      "volume": 3511238.594393999
+    },
+    {
+      "slug": "will-satoshi-move-any-bitcoin-in-2026",
+      "question": "Will Satoshi move any Bitcoin in 2026?",
+      "type": "new-discovery",
+      "volume": 2901447.1084819953
+    },
+    {
+      "slug": "xi-jinping-out-by",
+      "question": "Xi Jinping out by June 30?",
+      "type": "new-discovery",
+      "volume": 2794106.358809004
+    },
+    {
+      "slug": "nobel-peace-prize-winner-2026-139--will-donald-trump-win-the-nobel-peace-prize-in-2026-382",
+      "question": "Will Donald Trump win the Nobel Peace Prize in 2026?",
+      "type": "new-discovery",
+      "volume": 2673438.4533940274
+    },
+    {
+      "slug": "cricipl-roy-kol-2026-05-13--cricipl-roy-kol-2026-05-13",
+      "question": "Indian Premier League: Royal Challengers Bangalore vs Kolkata Knight Riders",
+      "type": "new-discovery",
+      "volume": 2641759.466947997
+    },
+    {
+      "slug": "what-will-the-fed-rate-be-at-the-end-of-2026--will-the-upper-bound-of-the-target-federal-funds-rate-be-4pt5-at-the-end-of-2026-139",
+      "question": "Will the upper bound of the target federal funds rate be \u2265 4.5% at the end of 2026?",
+      "type": "new-discovery",
+      "volume": 2395524.3111580014
+    },
+    {
+      "slug": "iran-closes-its-airspace-by--iran-closes-its-airspace-by-may-31-434-443-672-526-188",
+      "question": "Iran closes its airspace by May 31?",
+      "type": "new-discovery",
+      "volume": 2344706.1791059943
+    },
+    {
+      "slug": "which-party-will-gain-most-seats-in-russian-parliamentary-election--will-the-liberal-democratic-party-of-russia-ldpr-gain-the-most-seats-in-the-next-russian-parliamentary-election",
+      "question": "Will the Liberal Democratic Party of Russia (LDPR) gain the most seats in the next Russian parliamentary election?",
+      "type": "new-discovery",
+      "volume": 2263842.392357998
+    },
+    {
+      "slug": "ai-bubble-burst-by--ai-industry-downturn-by-december-31-2026-857",
+      "question": "AI bubble burst in 2026?",
+      "type": "new-discovery",
+      "volume": 2238316.1360119074
+    },
+    {
+      "slug": "is-jeffrey-epstein-alive-498",
+      "question": "Jeffrey Epstein confirmed to be alive before 2027?",
+      "type": "new-discovery",
+      "volume": 2221186.838274013
+    },
+    {
+      "slug": "berlin-state-election-winner--will-afd-win-the-most-seats-in-the-2026-berlin-state-elections",
+      "question": "Will AfD win the most seats in the 2026 Berlin state elections?",
+      "type": "new-discovery",
+      "volume": 2195345.0614409917
+    },
+    {
+      "slug": "zelenskyy-out-as-ukraine-president-before-2027",
+      "question": "Zelenskyy out as Ukraine president by end of 2026?",
+      "type": "new-discovery",
+      "volume": 2145269.8256809926
+    },
+    {
+      "slug": "opensea-fdv-above-one-day-after-launch--opensea-fdv-above-500m-one-day-after-launch-221-468-166-873-514-375-468-384",
+      "question": "Opensea FDV above $500M one day after launch?",
+      "type": "new-discovery",
+      "volume": 2074951.0604879966
+    },
+    {
+      "slug": "eurovision-2026-televote-winner--will-sweden-win-the-televote-for-eurovision-2026",
+      "question": "Will Sweden win the televote for Eurovision 2026?",
+      "type": "new-discovery",
+      "volume": 1945378.6204909992
+    },
+    {
+      "slug": "incheon-mayoral-election-winner--will-yoo-jeong-bok-win-the-2026-incheon-mayoral-election",
+      "question": "Will Yoo Jeong-bok win the 2026 Incheon mayoral election?",
+      "type": "new-discovery",
+      "volume": 1932892.1038020002
+    },
+    {
+      "slug": "human-moon-landing-in-2026",
+      "question": "Human moon landing in 2026?",
+      "type": "new-discovery",
+      "volume": 1914256.4614680163
+    },
+    {
+      "slug": "virginia-republican-senate-primary-winner--will-al-mina-be-the-republican-nominee-for-senate-in-virginia",
+      "question": "Will Al Mina be the Republican nominee for Senate in Virginia?",
+      "type": "new-discovery",
+      "volume": 1847157.9368360008
+    },
+    {
+      "slug": "democratic-presidential-nominee-2028--will-oprah-winfrey-win-the-2028-democratic-presidential-nomination",
+      "question": "Will Oprah Winfrey win the 2028 Democratic presidential nomination?",
+      "type": "volume-refresh",
+      "volume": 50690928.11018698
+    },
+    {
+      "slug": "will-trump-acquire-greenland-before-2027",
+      "question": "Will Trump acquire Greenland before 2027?",
+      "type": "volume-refresh",
+      "volume": 33051847.831689347
+    },
+    {
+      "slug": "who-will-be-confirmed-as-fed-chair--will-judy-shelton-be-confirmed-as-fed-chair",
+      "question": "Will Judy Shelton be confirmed as Fed Chair?",
+      "type": "volume-refresh",
+      "volume": 23950006.833398774
+    },
+    {
+      "slug": "will-the-iranian-regime-fall-by-may-31",
+      "question": "Will the Iranian regime fall by May 31?",
+      "type": "volume-refresh",
+      "volume": 19174964.441888142
+    },
+    {
+      "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
+      "question": "Strait of Hormuz traffic returns to normal by end of May?",
+      "type": "volume-refresh",
+      "volume": 12977156.543104012
+    },
+    {
+      "slug": "english-premier-league-winner--will-manchester-city-win-the-202526-english-premier-league",
+      "question": "Will Manchester City win the 2025\u201326 English Premier League?",
+      "type": "volume-refresh",
+      "volume": 12544250.31451999
+    },
+    {
+      "slug": "us-obtains-iranian-enriched-uranium-by--us-obtains-iranian-enriched-uranium-by-may-31-396",
+      "question": "US obtains Iranian enriched uranium by May 31?",
+      "type": "volume-refresh",
+      "volume": 11451920.945549902
+    },
+    {
+      "slug": "what-will-happen-before-gta-vi--will-jesus-christ-return-before-gta-vi-665",
+      "question": "Will Jesus Christ return before GTA VI?",
+      "type": "volume-refresh",
+      "volume": 11356370.193342917
+    },
+    {
+      "slug": "2026-f1-drivers-champion--will-valtteri-bottas-be-the-2026-f1-drivers-champion",
+      "question": "Will Valtteri Bottas be the 2026 F1 Drivers' Champion?",
+      "type": "volume-refresh",
+      "volume": 10191420.06035822
+    },
+    {
+      "slug": "hantavirus-pandemic-in-2026",
+      "question": "Hantavirus pandemic in 2026?",
+      "type": "volume-refresh",
+      "volume": 9184561.964007864
+    },
+    {
+      "slug": "2026-mens-french-open-winner--will-lorenzo-musetti-win-the-2026-mens-french-open",
+      "question": "Will Lorenzo Musetti win the 2026 Men's French Open?",
+      "type": "volume-refresh",
+      "volume": 8236381.060009001
+    },
+    {
+      "slug": "eurovision-winner-2026--will-austria-win-eurovision-2026",
+      "question": "Will Austria win Eurovision 2026?",
+      "type": "volume-refresh",
+      "volume": 7250630.974098927
+    },
+    {
+      "slug": "fed-decision-in-june-825--will-the-fed-increase-interest-rates-by-50-bps-after-the-june-2026-meeting",
+      "question": "Will the Fed increase interest rates by 50+ bps after the June 2026 meeting?",
+      "type": "volume-refresh",
+      "volume": 6191384.350788865
+    },
+    {
+      "slug": "colombia-presidential-election--will-gustavo-bolvar-win-the-2026-colombian-presidential-election",
+      "question": "Will Gustavo Bol\u00edvar win the 2026 Colombian presidential election?",
+      "type": "volume-refresh",
+      "volume": 5750844.7246429995
+    },
+    {
+      "slug": "nba-mvp-694--will-victor-wembanyama-win-the-20252026-nba-mvp",
+      "question": "Will Victor Wembanyama win the 2025\u20132026 NBA MVP?",
+      "type": "volume-refresh",
+      "volume": 5219882.745399964
+    },
+    {
+      "slug": "netanyahu-out-before-2027--netanyahu-out-by-june-30-383-244-575",
+      "question": "Netanyahu out by June 30?",
+      "type": "volume-refresh",
+      "volume": 5042179.993314974
+    },
+    {
+      "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+      "question": "Strait of Hormuz traffic returns to normal by end of June?",
+      "type": "volume-refresh",
+      "volume": 5018621.039665995
+    },
+    {
+      "slug": "how-many-fed-rate-cuts-in-2026--will-no-fed-rate-cuts-happen-in-2026",
+      "question": "Will no Fed rate cuts happen in 2026?",
+      "type": "volume-refresh",
+      "volume": 4054545.869043019
+    },
+    {
+      "slug": "next-french-presidential-election--will-franois-bayrou-win-the-2027-french-presidential-election",
+      "question": "Will Fran\u00e7ois Bayrou win the 2027 French presidential election?",
+      "type": "volume-refresh",
+      "volume": 3664111.539343994
+    },
+    {
+      "slug": "2026-seoul-mayoral-election-winner--will-seo-young-kyo-win-the-2026-seoul-mayoral-election",
+      "question": "Will Seo Young-kyo win the 2026 Seoul Mayoral Election",
+      "type": "volume-refresh",
+      "volume": 3466790.408817006
+    },
+    {
+      "slug": "us-obtains-iranian-enriched-uranium-by-may-31",
+      "question": "US obtains Iranian enriched uranium by May 31?",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "la-liga-top-goalscorer--will-oihan-sancet-be-the-top-goal-scorer-in-the-202526-la-liga-season",
+      "question": "Will Oihan Sancet be the top goal scorer in the 2025\u201326 La Liga season?",
+      "type": "stale-refresh",
+      "age": "26d ago"
+    },
+    {
+      "slug": "nba-western-conference-champion-933--will-the-los-angeles-lakers-win-the-nba-western-conference-finals",
+      "question": "Will the Los Angeles Lakers win the NBA Western Conference Finals?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "trump-announces-us-x-iran-ceasefire-by--trump-announces-us-x-iran-ceasefire-end-by-april-21-2026",
+      "question": "Trump announces US x Iran ceasefire end by April 21, 2026?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "atp-zhou-kotov-2026-04-12--atp-zhou-kotov-2026-04-12-match-total-22pt5",
+      "question": "Zhou vs. Kotov: Match O/U 22.5",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "colombia-presidential-election-1st-round-winner--will-abelardo-de-la-espriella-win-the-1st-round-of-the-2026-colombian-presidential-election",
+      "question": "Will Abelardo de la Espriella win the 1st round of the 2026 Colombian presidential election?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "openai-ipo-closing-market-cap--will-openais-market-cap-be-between-1pt25t-and-1pt5t-at-market-close-on-ipo-day",
+      "question": "Will OpenAI\u2019s market cap be between $1.25T and $1.5T at market close on IPO day?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "largest-company-end-of-april-738--will-nvidia-be-the-largest-company-in-the-world-by-market-cap-on-april-30-161",
+      "question": "Will NVIDIA be the largest company in the world by market cap on April 30?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "ipos-before-2027--ledger-ipo-before-2027",
+      "question": "Ledger IPO before 2027?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "epstein-client-list-released-in-2025-372--epstein-client-list-released-by-june-30",
+      "question": "Epstein client list released by June 30?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "ethereum-all-time-high-by--ethereum-all-time-high-by-december-31-2026",
+      "question": "Ethereum all time high by December 31, 2026?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "bitcoin-above-on-april-6--bitcoin-above-58k-on-april-6",
+      "question": "Will the price of Bitcoin be above $58,000 on April 6?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "where-will-zelenskyy-and-putin-meet-next--will-zelenskyy-and-putin-meet-next-in-us",
+      "question": "Will Zelenskyy and Putin meet next in US before 2027?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "israel-strike-on-yemen-by-593--israel-strike-on-yemen-by-june-30-2026-285-633-267-857",
+      "question": "Israel strike on Yemen by June 30, 2026?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "largest-ipo-by-market-cap-in-2026-287--will-kraken-have-the-highest-ipo-market-cap-2026-373",
+      "question": "Will Kraken have the highest IPO Market Cap 2026?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "standx-fdv-above-one-day-after-launch--standx-fdv-above-1b-one-day-after-launch-758-887-458-572-867",
+      "question": "StandX FDV above $1B one day after launch?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "trump-announces-end-of-military-operations-against-iran-by--trump-announces-end-of-military-operations-against-iran-by-april-30th-753-882-164-769-641-926",
+      "question": "Trump announces end of military operations against Iran by April 30th?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "what-price-will-wti-hit-in-april-2026--will-wti-crude-oil-wti-hit-high-200-in-april",
+      "question": "Will WTI Crude Oil (WTI) hit (HIGH) $200 in April?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "2026-mens-french-open-winner--will-joao-fonseca-win-the-2026-mens-french-open",
+      "question": "Will Joao Fonseca win the 2026 Men's French Open?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    },
+    {
+      "slug": "which-movie-has-biggest-opening-weekend-in-2026--will-michael-have-the-best-domestic-opening-weekend-in-2026",
+      "question": "Will Michael have the best domestic opening weekend in 2026?",
+      "type": "stale-refresh",
+      "age": "24d ago"
+    }
+  ],
+  "summary": {
+    "newDiscoveries": 20,
+    "volumeRefreshes": 20,
+    "staleRefreshes": 20,
+    "totalMarkets": 60
+  },
+  "resolvedSync": {
+    "checked": 7,
+    "resolved": 0,
+    "redeemed": 0,
+    "totalRedeemedUsd": 0,
+    "errors": [],
+    "details": []
+  },
+  "sharesSync": {
+    "checked": 7,
+    "adjusted": 0,
+    "errors": [],
+    "details": []
+  },
+  "message": "Refresh cycle started. 60 markets will be processed in the background."
+}
