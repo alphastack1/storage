@@ -1,5 +1,5 @@
 ===TRUTHMACHINE AGENT LEDGER===
-Last-updated: 2026-05-21T03:26:13Z
+Last-updated: 2026-05-21T03:47:30Z
 
 ---STANDING DIRECTIVES---
 - TM auto-reconciles resolved positions and position shares every refresh-cycle (deploys 3b94360 + 3b6b60b). If a daily report shows REDEMPTION PENDING for a closed market, or persistent 'balance is not enough — balance: X, order amount: Y' errors, that's a bug — investigate.
@@ -7,19 +7,19 @@ Last-updated: 2026-05-21T03:26:13Z
 
 ---STATE---
 Day-N: 44
-Last-balance: $77.67
-Last-deployed: $35.71
-Last-total-pnl: $11.51
-Last-realized-pnl: $9.71
-Last-unrealized-pnl: $1.80
-Last-open-positions: 7
-Refresh-triggered-at: unknown (bootstrap — Routine A did not run today; last A: 2026-05-15)
+Last-balance: $72.67
+Last-deployed: $40.63
+Last-total-pnl: $10.05
+Last-realized-pnl: $8.31
+Last-unrealized-pnl: $1.74
+Last-open-positions: 8
+Refresh-triggered-at: unknown (Routine A absent; user override directed cycle anyway)
 Refresh-cycleId: unknown
 Refresh-status: unknown
-Bot-cycle-triggered-at: unknown (bootstrap — cycle skipped)
-Bot-cycleId: unknown
+Bot-cycle-triggered-at: 2026-05-21T03:43:35Z
+Bot-cycleId: cycle_1779335012911_hlottw
 
 ---RUN LOG (most recent first, ~30 entries max)---
-2026-05-21 | day:44 | bought:0 | sold:0 | reviewed:0 | pnl:T11.51/R9.71/U1.80 | notes:bootstrap; no prior ledger; Routine A absent 6d; cycle skipped
+2026-05-21 | day:44 | bought:1 | sold:0 | reviewed:0 | pnl:T10.05/R8.31/U1.74 | notes:user override; A absent 6d; bought NO Iran-peace-May31 @0.82
 
 ===END LEDGER===
