@@ -1,0 +1,26 @@
+===TRUTHMACHINE AGENT LEDGER===
+Last-updated: 2026-05-24T20:42:12Z
+
+---STANDING DIRECTIVES---
+- TM auto-reconciles resolved positions and position shares every refresh-cycle (deploys 3b94360 + 3b6b60b). If a daily report shows REDEMPTION PENDING for a closed market, or persistent 'balance is not enough — balance: X, order amount: Y' errors, that's a bug — investigate.
+- TM trades on Polymarket CLOB V2 (deploy 76f9081, 2026-04-28). Collateral is pUSD. Any error string containing 'order_version_mismatch' is a critical V2 regression — flag immediately.
+
+---STATE---
+Day-N: 47
+Last-balance: $67.67
+Last-deployed: $45.07
+Last-total-pnl: $9.81
+Last-realized-pnl: $8.31
+Last-unrealized-pnl: $1.50
+Last-open-positions: 9
+Refresh-triggered-at: 2026-05-24T20:09:09Z
+Refresh-cycleId: rc_1779653342722_akcymh
+Refresh-status: triggered
+Bot-cycle-triggered-at: 2026-05-24T20:31:23Z
+Bot-cycleId: cycle_1779654680043_v40tok
+
+---RUN LOG (most recent first, ~30 entries max)---
+2026-05-24 | day:47 | bought:1 | sold:0 | reviewed:0 | pnl:T9.81/R8.31/U1.50 | notes:bought NO Iran-peace-May31 6sh@0.74 edge 8%
+2026-05-21 | day:44 | bought:1 | sold:0 | reviewed:0 | pnl:T10.05/R8.31/U1.74 | notes:user override; A absent 6d; bought NO Iran-peace-May31 @0.82
+
+===END LEDGER===
