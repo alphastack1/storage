@@ -1,3 +1,4 @@
 {"ts": "2026-04-28T20:02:17Z", "refresh_status": "triggered", "cycleId": "rc_1777406536179_bwq8dq", "tm_health": "degraded", "ledger_message_id": 8, "tm_balance": 0, "tm_open_positions": 11}
 {"ts":"2026-04-30T20:13:14Z","refresh_status":"triggered","cycleId":"rc_1777579992183_htmsm6","tm_health":"healthy","ledger_message_id":8,"tm_balance":64.695011,"tm_open_positions":11}
 {"ts":"2026-05-15T20:13:11Z","refresh_status":"triggered","cycleId":"rc_1778875958775_yukpvz","tm_health":"healthy","ledger_message_id":44,"tm_balance":77.674596,"tm_open_positions":7}
+{"ts":"2026-05-24T20:09:09Z","refresh_status":"triggered","cycleId":"rc_1779653342722_akcymh","tm_health":"healthy","ledger_message_id":72,"tm_balance":72.67,"tm_open_positions":8}
