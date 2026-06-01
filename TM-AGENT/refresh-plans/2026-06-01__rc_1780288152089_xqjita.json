@@ -1,0 +1,327 @@
+{
+  "accepted": true,
+  "cycleId": "rc_1780288152089_xqjita",
+  "config": {
+    "staleMaxAge": 24,
+    "stalePct": 33,
+    "volumePct": 34,
+    "newPct": 33,
+    "batchSize": 60,
+    "minVolume": 50000,
+    "categories": [],
+    "dryRun": false,
+    "delayMs": 5000,
+    "secret": "f048bc293973a72b0c51118404b1fb75e97688db81148bc2c2eefebb1b81eecc"
+  },
+  "plan": [
+    {
+      "slug": "2026-f1-drivers-champion--will-oliver-bearman-be-the-2026-f1-drivers-champion",
+      "question": "Will Oliver Bearman be the 2026 F1 Drivers' Champion?",
+      "type": "new-discovery",
+      "volume": 11245846.722857596
+    },
+    {
+      "slug": "atp-mensik-rublev-2026-05-31--atp-mensik-rublev-2026-05-31",
+      "question": "Roland Garros ATP: Jakub Mensik vs Andrey Rublev",
+      "type": "new-discovery",
+      "volume": 5029328.900384993
+    },
+    {
+      "slug": "spacex-ipo-closing-market-cap-above--spacex-ipo-closing-market-cap-above-3t-337-436",
+      "question": "SpaceX IPO closing market cap above $3T?",
+      "type": "new-discovery",
+      "volume": 1105166.5470729999
+    },
+    {
+      "slug": "2026-gyeonggi-province-gubernatorial-election-winner--will-choo-mi-ae-win-the-2026-gyeonggi-province-gubernatorial-election",
+      "question": "Will Choo Mi-ae win the 2026 Gyeonggi Province Gubernatorial Election?",
+      "type": "new-discovery",
+      "volume": 875113.8387309999
+    },
+    {
+      "slug": "epstein-client-list-released-in-2025-372--epstein-client-list-released-by-june-30",
+      "question": "Epstein client list released by June 30?",
+      "type": "new-discovery",
+      "volume": 800982.0646730013
+    },
+    {
+      "slug": "spacex-ipo-closing-market-cap-lowest-strikes--will-spacexs-market-cap-be-greater-than-1t-at-market-close-on-ipo-day",
+      "question": "Will SpaceX's market cap be greater than $1T at market close on IPO day?",
+      "type": "new-discovery",
+      "volume": 647970.9509079986
+    },
+    {
+      "slug": "elon-musk-of-tweets-may-26-june-2--elon-musk-of-tweets-may-26-june-2-80-99",
+      "question": "Will Elon Musk post 80-99 tweets from May 26 to June 2, 2026?",
+      "type": "new-discovery",
+      "volume": 371700.890917
+    },
+    {
+      "slug": "2026-womens-french-open-winner--will-madison-keys-win-the-2026-womens-french-open",
+      "question": "Will Madison Keys win the 2026 Women’s French Open?",
+      "type": "new-discovery",
+      "volume": 195825.0340950001
+    },
+    {
+      "slug": "what-will-happen-before-gta-vi--will-jesus-christ-return-before-gta-vi-665",
+      "question": "Will Jesus Christ return before GTA VI?",
+      "type": "volume-refresh",
+      "volume": 11510837.068398753
+    },
+    {
+      "slug": "xi-jinping-out-before-2027",
+      "question": "Xi Jinping out before 2027?",
+      "type": "volume-refresh",
+      "volume": 9830706.897840884
+    },
+    {
+      "slug": "will-china-invade-taiwan-by-june-30-2026",
+      "question": "Will China invade Taiwan by June 30, 2026?",
+      "type": "volume-refresh",
+      "volume": 9323562.405852944
+    },
+    {
+      "slug": "trump-out-as-president-before-2027",
+      "question": "Trump out as President before 2027?",
+      "type": "volume-refresh",
+      "volume": 8779549.538471222
+    },
+    {
+      "slug": "microstrategy-sell-any-bitcoin-in-2025--microstrategy-sells-any-bitcoin-by-may-31-2026",
+      "question": "MicroStrategy sells any Bitcoin by May 31, 2026?",
+      "type": "volume-refresh",
+      "volume": 8742990.341850905
+    },
+    {
+      "slug": "2026-mens-french-open-winner--will-joao-fonseca-win-the-2026-mens-french-open",
+      "question": "Will Joao Fonseca win the 2026 Men's French Open?",
+      "type": "volume-refresh",
+      "volume": 8255872.026726958
+    },
+    {
+      "slug": "which-companies-will-be-acquired-before-2027--will-nebius-group-be-acquired-before-2027-514-765",
+      "question": "Will Nebius Group be acquired before 2027?",
+      "type": "volume-refresh",
+      "volume": 7930624.583265994
+    },
+    {
+      "slug": "putin-out-before-2027",
+      "question": "Putin out as President of Russia by December 31, 2026?",
+      "type": "volume-refresh",
+      "volume": 6549663.898689992
+    },
+    {
+      "slug": "measles-cases-in-us-in-2026--will-there-be-at-least-10000-measles-cases-in-the-us-in-2026-418-668-617",
+      "question": "Will there be at least 10000 measles cases in the U.S. in 2026?",
+      "type": "volume-refresh",
+      "volume": 6501734.439257979
+    },
+    {
+      "slug": "trump-out-as-president-by-june-30",
+      "question": "Trump out as President by June 30?",
+      "type": "volume-refresh",
+      "volume": 5790791.247983931
+    },
+    {
+      "slug": "colombia-presidential-election--will-gustavo-bolvar-win-the-2026-colombian-presidential-election",
+      "question": "Will Gustavo Bolívar win the 2026 Colombian presidential election?",
+      "type": "volume-refresh",
+      "volume": 5780793.794643
+    },
+    {
+      "slug": "netanyahu-out-before-2027--netanyahu-out-by-june-30-383-244-575",
+      "question": "Netanyahu out by June 30?",
+      "type": "volume-refresh",
+      "volume": 5478680.476835956
+    },
+    {
+      "slug": "will-reza-pahlavi-enter-iran-by-june-30--will-reza-pahlavi-enter-iran-by-june-30-555-947-362-379-213",
+      "question": "Will Reza Pahlavi enter Iran by June 30?",
+      "type": "volume-refresh",
+      "volume": 5179383.875930981
+    },
+    {
+      "slug": "what-price-will-bitcoin-hit-before-2027--will-bitcoin-reach-250000-by-december-31-2026-579-442",
+      "question": "Will Bitcoin reach $250,000 by December 31, 2026?",
+      "type": "volume-refresh",
+      "volume": 4982849.5295179915
+    },
+    {
+      "slug": "how-many-fed-rate-cuts-in-2026--will-no-fed-rate-cuts-happen-in-2026",
+      "question": "Will no Fed rate cuts happen in 2026?",
+      "type": "volume-refresh",
+      "volume": 4546562.19980506
+    },
+    {
+      "slug": "next-french-presidential-election--will-yal-braun-pivet-win-the-2027-french-presidential-election",
+      "question": "Will Yaël Braun-Pivet win the 2027 French presidential election?",
+      "type": "volume-refresh",
+      "volume": 4540277.566129011
+    },
+    {
+      "slug": "cl-hit-jun-2026--will-crude-oil-cl-hit-high-200-by-end-of-june-677",
+      "question": "Will Crude Oil (CL) hit (HIGH) $200 by end of June?",
+      "type": "volume-refresh",
+      "volume": 4155788.9962339983
+    },
+    {
+      "slug": "us-iran-nuclear-deal-by-june-30",
+      "question": "US-Iran nuclear deal by June 30?",
+      "type": "volume-refresh",
+      "volume": 4134370.3722220114
+    },
+    {
+      "slug": "which-party-will-win-the-house-in-2026--will-the-democratic-party-control-the-house-after-the-2026-midterm-elections",
+      "question": "Will the Democratic Party control the House after the 2026 Midterm elections?",
+      "type": "volume-refresh",
+      "volume": 3722724.087414973
+    },
+    {
+      "slug": "fed-decision-in-july-181--will-the-fed-increase-interest-rates-by-25-bps-after-the-july-2026-meeting",
+      "question": "Will the Fed increase interest rates by 25 bps after the July 2026 meeting?",
+      "type": "volume-refresh",
+      "volume": 3717160.81694606
+    },
+    {
+      "slug": "us-obtains-iranian-enriched-uranium-by-may-31",
+      "question": "US obtains Iranian enriched uranium by May 31?",
+      "type": "stale-refresh",
+      "age": "53d ago"
+    },
+    {
+      "slug": "la-liga-top-goalscorer--will-oihan-sancet-be-the-top-goal-scorer-in-the-202526-la-liga-season",
+      "question": "Will Oihan Sancet be the top goal scorer in the 2025–26 La Liga season?",
+      "type": "stale-refresh",
+      "age": "45d ago"
+    },
+    {
+      "slug": "nba-western-conference-champion-933--will-the-los-angeles-lakers-win-the-nba-western-conference-finals",
+      "question": "Will the Los Angeles Lakers win the NBA Western Conference Finals?",
+      "type": "stale-refresh",
+      "age": "42d ago"
+    },
+    {
+      "slug": "which-company-has-the-best-ai-model-end-of-april--will-openai-have-the-best-ai-model-at-the-end-of-april-2026",
+      "question": "Will OpenAI have the best AI model at the end of April 2026?",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "lol-shft-navi-2026-04-26--lol-shft-navi-2026-04-26",
+      "question": "LoL: Shifters vs Natus Vincere (BO3) - LEC Regular Season",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-24-may-1--elon-musk-of-tweets-april-24-may-1-140-159",
+      "question": "Will Elon Musk post 140-159 tweets from April 24 to May 1, 2026?",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "where-will-trump-and-putin-meet-next-584--will-trump-and-putin-meet-next-in-belarus-572",
+      "question": "Will Trump and Putin meet next in Belarus?",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "what-price-will-bitcoin-hit-in-april-2026--will-bitcoin-dip-to-60k-in-april-2026",
+      "question": "Will Bitcoin dip to $60,000 in April?",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "ucl-psg1-liv1-2026-04-08--ucl-psg1-liv1-2026-04-08-psg1",
+      "question": "Will Paris Saint-Germain FC win on 2026-04-08?",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "bitcoin-above-on-april-8--bitcoin-above-66k-on-april-8",
+      "question": "Will the price of Bitcoin be above $66,000 on April 8?",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "lol-dk-hle1-2026-04-08--lol-dk-hle1-2026-04-08",
+      "question": "LoL: Dplus KIA vs Hanwha Life Esports (BO3) - LCK Rounds 1-2",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-7-april-14--elon-musk-of-tweets-april-7-april-14-580plus",
+      "question": "Will Elon Musk post 580+ tweets from April 7 to April 14, 2026?",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-3-april-10--elon-musk-of-tweets-april-3-april-10-160-179",
+      "question": "Will Elon Musk post 160-179 tweets from April 3 to April 10, 2026?",
+      "type": "stale-refresh",
+      "age": "35d ago"
+    },
+    {
+      "slug": "btc-updown-5m-1777310700",
+      "question": "Bitcoin Up or Down - April 27, 1:25PM-1:30PM ET",
+      "type": "stale-refresh",
+      "age": "34d ago"
+    },
+    {
+      "slug": "btc-updown-5m-1777311300",
+      "question": "Bitcoin Up or Down - April 27, 1:35PM-1:40PM ET",
+      "type": "stale-refresh",
+      "age": "34d ago"
+    },
+    {
+      "slug": "nba-det-orl-2026-04-27--nba-det-orl-2026-04-27",
+      "question": "Pistons vs. Magic",
+      "type": "stale-refresh",
+      "age": "34d ago"
+    },
+    {
+      "slug": "nba-min-den-2026-04-27--nba-min-den-2026-04-27",
+      "question": "Timberwolves vs. Nuggets",
+      "type": "stale-refresh",
+      "age": "34d ago"
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-21-april-28--elon-musk-of-tweets-april-21-april-28-180-199",
+      "question": "Will Elon Musk post 180-199 tweets from April 21 to April 28, 2026?",
+      "type": "stale-refresh",
+      "age": "34d ago"
+    },
+    {
+      "slug": "predictfun-fdv-above-one-day-after-launch--predictfun-fdv-above-200m-one-day-after-launch",
+      "question": "Predict.fun FDV above $200M one day after launch?",
+      "type": "stale-refresh",
+      "age": "34d ago"
+    },
+    {
+      "slug": "microstrategy-sell-any-bitcoin-in-2025--microstrategy-sells-any-bitcoin-by-june-30-2026",
+      "question": "MicroStrategy sells any Bitcoin by June 30, 2026?",
+      "type": "stale-refresh",
+      "age": "33d ago"
+    }
+  ],
+  "summary": {
+    "newDiscoveries": 8,
+    "volumeRefreshes": 20,
+    "staleRefreshes": 20,
+    "totalMarkets": 48
+  },
+  "resolvedSync": {
+    "checked": 9,
+    "resolved": 0,
+    "redeemed": 0,
+    "totalRedeemedUsd": 0,
+    "errors": [],
+    "details": []
+  },
+  "sharesSync": {
+    "checked": 9,
+    "adjusted": 0,
+    "errors": [],
+    "details": []
+  },
+  "message": "Refresh cycle started. 48 markets will be processed in the background."
+}
