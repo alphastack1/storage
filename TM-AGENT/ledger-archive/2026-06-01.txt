@@ -1,5 +1,5 @@
 ===TRUTHMACHINE AGENT LEDGER===
-Last-updated: 2026-06-01T04:15:43Z
+Last-updated: 2026-06-01T04:42:00Z
 
 ---STANDING DIRECTIVES---
 - TM auto-reconciles resolved positions and position shares every refresh-cycle (deploys 3b94360 + 3b6b60b). If a daily report shows REDEMPTION PENDING for a closed market, or persistent 'balance is not enough — balance: X, order amount: Y' errors, that's a bug — investigate.
@@ -7,20 +7,20 @@ Last-updated: 2026-06-01T04:15:43Z
 
 ---STATE---
 Day-N: 55
-Last-balance: $67.67
-Last-deployed: $45.07
-Last-total-pnl: $9.81
+Last-balance: $57.67
+Last-deployed: $54.92
+Last-total-pnl: $13.53
 Last-realized-pnl: $8.31
-Last-unrealized-pnl: $1.50
-Last-open-positions: 9
-Refresh-triggered-at: 2026-05-31T20:09:25Z
-Refresh-cycleId: rc_1780258158638_jlwfbe
+Last-unrealized-pnl: $5.22
+Last-open-positions: 11
+Refresh-triggered-at: 2026-06-01T04:29:14Z
+Refresh-cycleId: rc_1780288152089_xqjita
 Refresh-status: triggered
-Bot-cycle-triggered-at: 2026-05-24T20:31:23Z
-Bot-cycleId: cycle_1779654680043_v40tok
+Bot-cycle-triggered-at: 2026-06-01T04:40:50Z
+Bot-cycleId: cycle_1780288850849_ctk0a2
 
 ---RUN LOG (most recent first, ~30 entries max)---
-2026-06-01 | day:55 | bought:0 | sold:0 | reviewed:0 | pnl:T9.81/R8.31/U1.50 (cached) | notes:SKIPPED - user said A re-triggered, ledger Refresh-triggered-at still 8h old
+2026-06-01 | day:55 | bought:2 | sold:0 | reviewed:0 | pnl:T13.53/R8.31/U5.22 | notes:Hormuz NO 7@0.71, USIran-nuke NO 8@0.61; 1 resolved+redeemed (nba)
 2026-05-31 | day:54 | bought:0 | sold:0 | reviewed:0 | pnl:T9.81/R8.31/U1.50 (cached) | notes:SKIPPED - Routine A absent 7d
 2026-05-24 | day:47 | bought:1 | sold:0 | reviewed:0 | pnl:T9.81/R8.31/U1.50 | notes:bought NO Iran-peace-May31 6sh@0.74 edge 8%
 2026-05-21 | day:44 | bought:1 | sold:0 | reviewed:0 | pnl:T10.05/R8.31/U1.74 | notes:user override; A absent 6d; bought NO Iran-peace-May31 @0.82
