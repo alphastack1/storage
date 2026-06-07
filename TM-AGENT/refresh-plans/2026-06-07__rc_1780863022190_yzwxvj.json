@@ -1,0 +1,315 @@
+{
+  "accepted": true,
+  "cycleId": "rc_1780863022190_yzwxvj",
+  "config": {
+    "staleMaxAge": 24,
+    "stalePct": 33,
+    "volumePct": 34,
+    "newPct": 33,
+    "batchSize": 60,
+    "minVolume": 50000,
+    "categories": [],
+    "dryRun": false,
+    "delayMs": 5000,
+    "secret": "f048bc293973a72b0c51118404b1fb75e97688db81148bc2c2eefebb1b81eecc"
+  },
+  "plan": [
+    {
+      "slug": "us-x-iran-permanent-peace-deal-by--us-x-iran-permanent-peace-deal-by-june-15-2026-734-856-129",
+      "question": "US x Iran permanent peace deal by June 15, 2026?",
+      "type": "new-discovery",
+      "volume": 14893421.698106233
+    },
+    {
+      "slug": "nba-sas-nyk-2026-06-08--nba-sas-nyk-2026-06-08",
+      "question": "Spurs vs. Knicks",
+      "type": "new-discovery",
+      "volume": 6339172.106238096
+    },
+    {
+      "slug": "where-will-maxx-crosby-play-in-2026--will-maxx-crosby-play-for-new-york-jets-next",
+      "question": "Will Maxx Crosby play for New York Jets next?",
+      "type": "new-discovery",
+      "volume": 1199583.203074
+    },
+    {
+      "slug": "what-price-will-bitcoin-hit-in-june-2026--will-bitcoin-reach-100k-in-june-2026",
+      "question": "Will Bitcoin reach $100,000 in June?",
+      "type": "new-discovery",
+      "volume": 1172763.0960600139
+    },
+    {
+      "slug": "elon-musk-of-tweets-june-2-june-9--elon-musk-of-tweets-june-2-june-9-160-179",
+      "question": "Will Elon Musk post 160-179 tweets from June 2 to June 9, 2026?",
+      "type": "new-discovery",
+      "volume": 285198.7740220001
+    },
+    {
+      "slug": "lol-g2-kc-2026-06-07--lol-g2-kc-2026-06-07-game-handicap-home-1pt5",
+      "question": "Game Handicap: KC (-1.5) vs G2 Esports (+1.5)",
+      "type": "new-discovery",
+      "volume": 257.69230600000003
+    },
+    {
+      "slug": "will-jesus-christ-return-before-2027",
+      "question": "Will Jesus Christ return before 2027?",
+      "type": "volume-refresh",
+      "volume": 63518756.97749758
+    },
+    {
+      "slug": "world-cup-winner--will-uzbekistan-win-the-2026-fifa-world-cup-773",
+      "question": "Will Uzbekistan win the 2026 FIFA World Cup?",
+      "type": "volume-refresh",
+      "volume": 56539178.35841757
+    },
+    {
+      "slug": "democratic-presidential-nominee-2028--will-oprah-winfrey-win-the-2028-democratic-presidential-nomination",
+      "question": "Will Oprah Winfrey win the 2028 Democratic presidential nomination?",
+      "type": "volume-refresh",
+      "volume": 52931092.26219291
+    },
+    {
+      "slug": "presidential-election-winner-2028--will-lebron-james-win-the-2028-us-presidential-election",
+      "question": "Will LeBron James win the 2028 US Presidential Election?",
+      "type": "volume-refresh",
+      "volume": 51615556.51956037
+    },
+    {
+      "slug": "will-the-iranian-regime-fall-by-june-30",
+      "question": "Will the Iranian regime fall by June 30?",
+      "type": "volume-refresh",
+      "volume": 49352272.36764721
+    },
+    {
+      "slug": "republican-presidential-nominee-2028--will-byron-donalds-win-the-2028-republican-presidential-nomination",
+      "question": "Will Byron Donalds win the 2028 Republican presidential nomination?",
+      "type": "volume-refresh",
+      "volume": 43286865.78958639
+    },
+    {
+      "slug": "2026-nba-champion--will-the-san-antonio-spurs-win-the-2026-nba-finals",
+      "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
+      "type": "volume-refresh",
+      "volume": 37500630.69410504
+    },
+    {
+      "slug": "will-the-us-invade-iran-before-2027",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "type": "volume-refresh",
+      "volume": 34245072.63088683
+    },
+    {
+      "slug": "will-trump-acquire-greenland-before-2027",
+      "question": "Will Trump acquire Greenland before 2027?",
+      "type": "volume-refresh",
+      "volume": 33607479.000710756
+    },
+    {
+      "slug": "will-china-invade-taiwan-before-2027",
+      "question": "Will China invade Taiwan by end of 2026?",
+      "type": "volume-refresh",
+      "volume": 33576989.19391892
+    },
+    {
+      "slug": "venezuela-leader-end-of-2026--will-richard-grenell-be-the-leader-of-venezuela-end-of-2026",
+      "question": "Will Richard Grenell be the leader of Venezuela end of 2026?",
+      "type": "volume-refresh",
+      "volume": 32271613.11217898
+    },
+    {
+      "slug": "will-the-us-confirm-that-aliens-exist-before-2027--will-the-us-confirm-that-aliens-exist-before-2027-789-924-249",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "type": "volume-refresh",
+      "volume": 31800641.18211658
+    },
+    {
+      "slug": "when-will-bitcoin-hit-150k--will-bitcoin-hit-150k-by-june-30-2026",
+      "question": "Will Bitcoin hit $150k by June 30, 2026?",
+      "type": "volume-refresh",
+      "volume": 20016209.43389086
+    },
+    {
+      "slug": "will-the-iranian-regime-fall-by-the-end-of-2026",
+      "question": "Will the Iranian regime fall before 2027?",
+      "type": "volume-refresh",
+      "volume": 19426618.983028285
+    },
+    {
+      "slug": "fed-decision-in-june-825--will-the-fed-increase-interest-rates-by-50-bps-after-the-june-2026-meeting",
+      "question": "Will the Fed increase interest rates by 50+ bps after the June 2026 meeting?",
+      "type": "volume-refresh",
+      "volume": 17178018.224398673
+    },
+    {
+      "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-june",
+      "question": "Strait of Hormuz traffic returns to normal by end of June?",
+      "type": "volume-refresh",
+      "volume": 14698058.911161209
+    },
+    {
+      "slug": "hantavirus-pandemic-in-2026",
+      "question": "Hantavirus pandemic in 2026?",
+      "type": "volume-refresh",
+      "volume": 14547904.784910826
+    },
+    {
+      "slug": "brazil-presidential-election--will-tarcisio-de-frietas-win-the-2026-brazilian-presidential-election",
+      "question": "Will Tarcisio de Freitas win the 2026 Brazilian presidential election?",
+      "type": "volume-refresh",
+      "volume": 12454811.366295796
+    },
+    {
+      "slug": "what-will-happen-before-gta-vi--will-jesus-christ-return-before-gta-vi-665",
+      "question": "Will Jesus Christ return before GTA VI?",
+      "type": "volume-refresh",
+      "volume": 11548021.629619746
+    },
+    {
+      "slug": "2026-f1-drivers-champion--will-oliver-bearman-be-the-2026-f1-drivers-champion",
+      "question": "Will Oliver Bearman be the 2026 F1 Drivers' Champion?",
+      "type": "volume-refresh",
+      "volume": 11499378.679523554
+    },
+    {
+      "slug": "us-obtains-iranian-enriched-uranium-by-may-31",
+      "question": "US obtains Iranian enriched uranium by May 31?",
+      "type": "stale-refresh",
+      "age": "60d ago"
+    },
+    {
+      "slug": "la-liga-top-goalscorer--will-oihan-sancet-be-the-top-goal-scorer-in-the-202526-la-liga-season",
+      "question": "Will Oihan Sancet be the top goal scorer in the 2025–26 La Liga season?",
+      "type": "stale-refresh",
+      "age": "51d ago"
+    },
+    {
+      "slug": "nba-western-conference-champion-933--will-the-los-angeles-lakers-win-the-nba-western-conference-finals",
+      "question": "Will the Los Angeles Lakers win the NBA Western Conference Finals?",
+      "type": "stale-refresh",
+      "age": "49d ago"
+    },
+    {
+      "slug": "2026-fide-candidates-tournament-winner--will-javokhir-sindarov-win-the-2026-fide-candidates-tournament",
+      "question": "Will Javokhir Sindarov win the 2026 FIDE Candidates Tournament?",
+      "type": "stale-refresh",
+      "age": "40d ago"
+    },
+    {
+      "slug": "where-will-the-next-us-iran-diplomatic-meeting-happen-811--will-the-next-diplomatic-us-iran-meeting-be-in-pakistan-524",
+      "question": "Will the next diplomatic US-Iran meeting be in Pakistan?",
+      "type": "stale-refresh",
+      "age": "40d ago"
+    },
+    {
+      "slug": "spacex-ipo-closing-market-cap-above--spacex-ipo-closing-market-cap-above-3t",
+      "question": "SpaceX IPO closing market cap above $3T",
+      "type": "stale-refresh",
+      "age": "40d ago"
+    },
+    {
+      "slug": "military-action-against-iran-ends-on-127--military-action-against-iran-ends-on-april-9-2026",
+      "question": "Military action against Iran ends on April 9, 2026?",
+      "type": "stale-refresh",
+      "age": "40d ago"
+    },
+    {
+      "slug": "of-views-of-next-mrbeast-video-on-week-1-794--will-mrbeasts-next-video-get-110-million-or-more-views-on-week-1-575",
+      "question": "Will MrBeast's next video get 110 million or more views on week 1?",
+      "type": "stale-refresh",
+      "age": "40d ago"
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-7-april-14--elon-musk-of-tweets-april-7-april-14-480-499",
+      "question": "Will Elon Musk post 480-499 tweets from April 7 to April 14, 2026?",
+      "type": "stale-refresh",
+      "age": "40d ago"
+    },
+    {
+      "slug": "strait-of-hormuz-traffic-returns-to-normal-by-end-of-may--strait-of-hormuz-traffic-returns-to-normal-by-end-of-may",
+      "question": "Strait of Hormuz traffic returns to normal by end of May?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "what-price-will-bitcoin-hit-in-april-2026--will-bitcoin-reach-80k-in-april-2026-794",
+      "question": "Will Bitcoin reach $80,000 in April?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "cricipl-mum-sun-2026-04-29--cricipl-mum-sun-2026-04-29",
+      "question": "Indian Premier League: Mumbai Indians vs Sunrisers Hyderabad",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "largest-company-end-of-april-738--will-microsoft-be-the-largest-company-in-the-world-by-market-cap-on-april-30-511",
+      "question": "Will Microsoft be the largest company in the world by market cap on April 30?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "printr-public-sale-total-commitments--over-40m-committed-to-the-printr-public-sale",
+      "question": "Over $40M committed to the Printr public sale?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "eurovision-2026-jury-winner--will-czechia-be-the-jury-winner-in-the-eurovision-2026-grand-final",
+      "question": "Will Czechia be the Jury Winner in the Eurovision 2026 Grand Final?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "1-paid-app-in-the-us-apple-app-store-on-april-10--will-shadowrocket-be-1-paid-app-in-the-us-apple-app-store-on-april-10",
+      "question": "Will Shadowrocket be #1 Paid App in the US Apple App Store on April 10?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-9-april-11--elon-musk-of-tweets-april-9-april-11-40-64",
+      "question": "Will Elon Musk post 40-64 tweets from April 9 to April 11, 2026?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "what-price-will-bitcoin-hit-april-6-12--will-bitcoin-reach-74k-april-6-12",
+      "question": "Will Bitcoin reach $74,000 April 6-12?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "english-premier-league-top-goalscorer--will-mohamed-salah-be-the-top-goal-scorer-in-the-202526-english-premier-league-season",
+      "question": "Will Mohamed Salah be the top goal scorer in the 2025–26 English Premier League season?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    },
+    {
+      "slug": "who-will-win-big-brother-brasil-26--will-juliano-floss-win-big-brother-brasil-26",
+      "question": "Will Juliano Floss win Big Brother Brasil 26?",
+      "type": "stale-refresh",
+      "age": "39d ago"
+    }
+  ],
+  "summary": {
+    "newDiscoveries": 6,
+    "volumeRefreshes": 20,
+    "staleRefreshes": 20,
+    "totalMarkets": 46
+  },
+  "resolvedSync": {
+    "checked": 8,
+    "resolved": 0,
+    "redeemed": 0,
+    "totalRedeemedUsd": 0,
+    "errors": [],
+    "details": []
+  },
+  "sharesSync": {
+    "checked": 8,
+    "adjusted": 0,
+    "errors": [],
+    "details": []
+  },
+  "message": "Refresh cycle started. 46 markets will be processed in the background."
+}
