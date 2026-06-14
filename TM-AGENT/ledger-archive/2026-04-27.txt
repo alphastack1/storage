@@ -1,0 +1,37 @@
+===TRUTHMACHINE AGENT LEDGER===
+Last-updated: 2026-04-27T20:38:00Z
+
+---STANDING DIRECTIVES---
+- TM auto-reconciles resolved positions every refresh-cycle (deploy 3b94360, 2026-04-25). If a daily report shows REDEMPTION PENDING, that's a bug — investigate immediately.
+- Bot-status API still returns buggy unrealizedPnl (2026-04-27 sample: API=$0.12 vs derived=-$4.64). Until they match within $0.01, derive unrealized = totalPnl - realizedPnl.
+- NegRisk redemption path still unverified — first negRisk resolution will be the canary (likely Israel-strike or CA gov). If it fails, fix the negRisk path.
+- Composio MCP: this Routine uses the TruthMachine Composio account via API key (ck_TPj...); the gradecoach Composio account is for the OTHER agent and must not be used here.
+
+---STATE---
+Day-N: 20
+Last-balance: $46.75
+Last-deployed: $58.78
+Last-total-pnl: -$9.65
+Last-realized-pnl: -$5.01
+Last-unrealized-pnl: -$4.64
+Last-open-positions: 11
+Refresh-triggered-at: 2026-04-27T20:24:14Z
+Refresh-cycleId: rc_1777321451714_uvqfrc
+Refresh-status: triggered
+Bot-cycle-triggered-at: 2026-04-27T20:35:45Z
+Bot-cycleId: ERROR-DNS
+
+---RUN LOG (most recent first, ~30 entries max)---
+2026-04-27 | day:20 | bought:0 | sold:0 | reviewed:0 | pnl:T-9.65/R-5.01/U-4.64 | notes:cycle trigger DNS-overflow (3rd day TM degraded post-cycle); status fresh; lastCycleAt still 04-25
+2026-04-26 | day:19 | bought:0 | sold:0 | reviewed:0 | pnl:T-9.65/R-5.01/U-4.64 | notes:cycle+status both 503 post-refresh; A ok at 20:04Z; cached state
+2026-04-25 | day:18 | bought:0 | sold:0 | reviewed:2 | pnl:T-9.65/R-5.01/U-4.64 | notes:cycle 0/0/2 (3 thin-bid skips, 2 btc-updown errs, 2 holds); post-cycle deploys 3b94360+c93d860+01ab65b live; admin sync claimed us-iran +$13 (tx 0x1551..) portland -$4.88 loss; bal $46.75 open 11 closed 6
+2026-04-24 | day:17 | bought:0 | sold:0 | reviewed:2 | pnl:T-13.09/R-8.45/U-4.64 | notes:2 buy attempts errored btc-updown markets not active; 2 holds iran/israel
+2026-04-23 | day:16 | bought:0 | sold:0 | reviewed:0 | pnl:T-13.09/R-8.45/U-4.64 | notes:skipped - Routine A saw TM down; cached state
+2026-04-22 | day:15 | bought:0 | sold:0 | reviewed:0 | pnl:T-13.09/R-8.45/U-4.64 | notes:skipped - Routine A saw TM down (503); cached state
+2026-04-21 | day:14 | bought:0 | sold:0 | reviewed:2 | pnl:T-13.09/R-8.45/U-4.64 | notes:clean run; 1 err btc-updown-5m not open; bal $32.46 open 13; 2 positions resolved overnight
+2026-04-20 | day:13 | bought:0 | sold:0 | reviewed:0 | pnl:T-6.17/R-1.53/U-4.64 | notes:TM degraded, bot/cycle+bot/status 503 DNS overflow; PnL cached
+2026-04-20 | day:13 | pillar:skipped(composio) | asset:none | bought:0 | sold:0 | pnl:T-6.17/R-1.53/U-4.64 | notes:cycle 0b/0s/5r hold; Composio MCP auth required; IG skipped
+2026-04-19 | day:12 | pillar:skipped | asset:none | bought:0 | sold:0 | pnl:T-6.17/R-1.53/U-4.64 | notes:2nd fire ~4h after 06:12Z post; IG post skipped (1/day cap); TM ops clean
+2026-04-19 | day:12 | pillar:Meta | asset:generated-text-card | bought:0 | sold:0 | pnl:T-6.17/R-1.53/U-4.64 | notes:first live post - "21 data sources. One probability." https://www.instagram.com/p/DXTYFT8lF7b/
+
+===END LEDGER===
