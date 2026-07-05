@@ -2,3 +2,4 @@
 {"ts":"2026-04-30T20:13:14Z","refresh_status":"triggered","cycleId":"rc_1777579992183_htmsm6","tm_health":"healthy","ledger_message_id":8,"tm_balance":64.695011,"tm_open_positions":11}
 {"ts":"2026-05-15T20:13:11Z","refresh_status":"triggered","cycleId":"rc_1778875958775_yukpvz","tm_health":"healthy","ledger_message_id":44,"tm_balance":77.674596,"tm_open_positions":7}
 {"ts":"2026-06-14T20:05:20Z","refresh_status":"triggered","cycleId":"rc_1781467508888_38hntt","tm_health":"healthy","ledger_message_id":88,"tm_balance":55.687354,"tm_open_positions":8}
+{"ts": "2026-07-05T20:03:47Z", "refresh_status": "triggered", "cycleId": "rc_1783281786260_jgwk7o", "tm_health": "healthy", "ledger_message_id": null, "tm_balance": 50.687355, "tm_open_positions": 8}
