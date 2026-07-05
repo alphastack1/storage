@@ -1,0 +1,28 @@
+===TRUTHMACHINE AGENT LEDGER===
+Last-updated: 2026-07-05T20:35:00Z
+
+---STANDING DIRECTIVES---
+- TM auto-reconciles resolved positions and position shares every refresh-cycle (deploys 3b94360 + 3b6b60b). If a daily report shows REDEMPTION PENDING for a closed market, or persistent 'balance is not enough — balance: X, order amount: Y' errors, that's a bug — investigate.
+- TM trades on Polymarket CLOB V2 (deploy 76f9081, 2026-04-28). Collateral is pUSD. Any error string containing 'order_version_mismatch' is a critical V2 regression — flag immediately.
+
+---STATE---
+Day-N: 89
+Last-balance: $55.69
+Last-deployed: $41.01
+Last-total-pnl: $3.49
+Last-realized-pnl: $2.64
+Last-unrealized-pnl: $0.85
+Last-open-positions: 8
+Refresh-triggered-at: 2026-06-14T20:05:20Z
+Refresh-cycleId: rc_1781467508888_38hntt
+Refresh-status: triggered (stale — no A today)
+Bot-cycle-triggered-at: —
+Bot-cycleId: —
+
+---RUN LOG (most recent first, ~30 entries max)---
+2026-07-05 | day:89 | bought:0 | sold:0 | reviewed:0 | pnl:T$3.49/R$2.64/U$0.85 | notes:skipped — no Routine A; 21d gap; ledger bootstrap-recreated
+2026-06-14 | day:68 | bought:0 | sold:0 | reviewed:8 | pnl:T$3.49/R$2.64/U$0.85 | notes:cycle result expired; 1 resolved pending redemption
+2026-06-09 | day:63 | bought:0 | sold:0 | reviewed:0 | pnl:T$16.93/R$12.58/U$4.35 | notes:ok
+2026-06-07 | day:61 | bought:0 | sold:0 | reviewed:0 | pnl:T16.90/R12.57/U4.33 | notes:bootstrap; skipped (no A that day)
+
+===END LEDGER===
