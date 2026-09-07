@@ -1,0 +1,34 @@
+===TRUTHMACHINE AGENT LEDGER===
+Last-updated: 2026-05-17T20:39:33Z
+
+---STANDING DIRECTIVES---
+- TM trades on Polymarket CLOB V2 (deploy 76f9081, 2026-04-28). Collateral is pUSD. Any error string containing 'order_version_mismatch' is a critical V2 regression — flag immediately.
+- TM auto-reconciles resolved positions and position shares every refresh-cycle (deploys 3b94360 + 3b6b60b). If a daily report shows REDEMPTION PENDING for a closed market, or persistent 'balance is not enough — balance: X, order amount: Y' errors, that's a bug — investigate.
+
+---STATE---
+Day-N: 40
+Last-balance: $77.67
+Last-deployed: $35.71
+Last-total-pnl: $11.76
+Last-realized-pnl: $9.71
+Last-unrealized-pnl: $2.04
+Last-open-positions: 7
+Refresh-triggered-at: 2026-05-17T20:05:59Z
+Refresh-cycleId: rc_1779048332715_wh3z1m
+Refresh-status: triggered
+Bot-cycle-triggered-at: 2026-05-17T20:37:52Z
+Bot-cycleId: cycle_1779050263636_iq0r3z
+
+---RUN LOG (most recent first, ~30 entries max)---
+2026-05-17 | day:40 | bought:0 | sold:0 | reviewed:0 | pnl:T11.76/R9.71/U2.04 | notes:3 cand skipped (BTC-UpDown closed; Bond/Aliens beyond 30d horizon); 2 resolved+redeemed; 0 errors
+2026-05-15 | day:38 | bought:0 | sold:0 | reviewed:0 | pnl:T13.40/R10.63/U2.76 | notes:5 buys planned (Epstein-note, Iran-Pakistan, Iran-fall, 2x SOL-UpDown) skipped@filters; 3 resolved+redeemed observed; 0 errors
+2026-05-14 | day:37 | bought:0 | sold:0 | reviewed:0 | pnl:T13.32/R10.63/U2.69 | notes:5 buys planned (BTC/SOL Up-Down, Iran-fall, Zhou-Kotov) skipped@filters; 3 resolved+redeemed observed; 0 errors
+2026-05-13 | day:36 | bought:0 | sold:0 | reviewed:1 | pnl:T13.47/R10.63/U2.84 | notes:Ledger IPO drift_adjust@73c; 3 resolved+redeemed observed; 0 errors
+2026-05-12 | day:35 | bought:0 | sold:0 | reviewed:1 | pnl:T12.02/R10.63/U1.39 | notes:Iran-peace drift_adjust@78c; 3 resolved+redeemed observed; 0 errors
+2026-05-11 | day:34 | bought:0 | sold:0 | reviewed:0 | pnl:T3.87/R2.31/U1.56 | notes:SKIPPED-no-Routine-A today (last A: 2026-05-10T20:11Z, ~24h ago); state cached
+2026-05-10 | day:33 | bought:2 | sold:0 | reviewed:0 | pnl:T3.87/R2.31/U1.56 | notes:NO Iran-peace@73c, NO Spurs/Wolves@36c; 3 skipped (NegRisk/horizon/closed); 0 errors
+2026-05-09 | day:32 | bought:0 | sold:0 | reviewed:1 | pnl:T4.03/R2.31/U1.71 | notes:Israel GTC@16c hold; 5 skipped (thin/closed); 0 errors
+2026-05-08 | day:31 | bought:0 | sold:1 | reviewed:1 | pnl:T4.68/R2.31/U2.37 | notes:Slot YES expired_dust; Israel GTC@16c; 2 resolved+redeemed observed
+2026-05-07 | day:30 | bought:0 | sold:1 | reviewed:2 | pnl:T-0.93/R2.32/U-3.24 | notes:Swalwell NO expired_dust closed; 2 GTC holds
+
+===END LEDGER===
