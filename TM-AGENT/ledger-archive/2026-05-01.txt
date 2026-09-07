@@ -1,0 +1,39 @@
+===TRUTHMACHINE AGENT LEDGER===
+Last-updated: 2026-05-01T20:43:12Z
+
+---STANDING DIRECTIVES---
+- TM auto-reconciles resolved positions and position shares every refresh-cycle (deploys 3b94360 + 3b6b60b). If a daily report shows REDEMPTION PENDING for a closed market, or persistent 'balance is not enough — balance: X, order amount: Y' errors, that's a bug — investigate.
+- TM trades on Polymarket CLOB V2 (deploy 76f9081, 2026-04-28). Collateral is pUSD. Any error string containing 'order_version_mismatch' is a critical V2 regression — flag immediately.
+- NegRisk redemption path still unverified — first negRisk resolution will be the canary (likely Israel-strike or CA gov). If it fails, fix the negRisk path.
+- Composio MCP: this Routine uses the TruthMachine Composio account via API key (ck_TPj...); the gradecoach Composio account is for the OTHER agent and must not be used here.
+
+---STATE---
+Day-N: 24
+Last-balance: $64.70
+Last-deployed: $43.91
+Last-total-pnl: -$8.51
+Last-realized-pnl: -$5.94
+Last-unrealized-pnl: -$2.57
+Last-open-positions: 10
+Refresh-triggered-at: 2026-05-01T20:03:26Z
+Refresh-cycleId: rc_1777665784350_nhmk0m
+Refresh-status: triggered
+Bot-cycle-triggered-at: 2026-05-01T20:37:06Z
+Bot-cycleId: cycle_1777667826503_gr16ib
+
+---RUN LOG (most recent first, ~30 entries max)---
+2026-05-01 | day:24 | bought:? | sold:? | reviewed:? | pnl:T-8.51/R-5.94/U-2.57 | notes:cycle accepted but jobId 'not found' all polls; pos 11→10; 2 redemption-pending (1 from 04-12)
+2026-04-30 | day:23 | bought:0 | sold:0 | reviewed:4 | pnl:T-8.25/R-5.01/U-3.23 | notes:cycle 26s; cuba lower_target 86.1→77.0c; 3 GTC holds (iran-lead/israel-3/swalwell); swalwell GTC rejected invalid_amounts; bal $64.70; API=derived unreal
+2026-04-29 | day:22 | bought:0 | sold:0 | reviewed:4 | pnl:T-9.65/R-5.01/U-4.64 | notes:cycle clean 33s; ubisoft-2027 lower_target 75.2→73.1c; 3 GTC holds (iran-lead/israel-3/swalwell); bal $64.37 (pUSD); 0 V2 errs
+2026-04-28 | day:21 | bought:0 | sold:0 | reviewed:4 | pnl:T-9.65/R-5.01/U-4.64 | notes:cycle 23s; 3 order_version_mismatch errs (iran-lead/israel-3/swalwell); swalwell raise_target 74→95c; bal read $0 anomaly
+2026-04-27 | day:20 | bought:0 | sold:0 | reviewed:0 | pnl:T-9.65/R-5.01/U-4.64 | notes:cycle DNS-overflow (3rd day TM degraded post-cycle); lastCycleAt still 04-25
+2026-04-26 | day:19 | bought:0 | sold:0 | reviewed:0 | pnl:T-9.65/R-5.01/U-4.64 | notes:cycle+status 503 post-refresh; cached state
+2026-04-25 | day:18 | bought:0 | sold:0 | reviewed:2 | pnl:T-9.65/R-5.01/U-4.64 | notes:cycle 0/0/2; deploys 3b94360+c93d860 live; admin sync us-iran +$13 (tx 0x1551..) portland -$4.88; bal $46.75 open 11
+2026-04-24 | day:17 | bought:0 | sold:0 | reviewed:2 | pnl:T-13.09/R-8.45/U-4.64 | notes:2 buy errs btc-updown not active; 2 holds iran/israel
+2026-04-23 | day:16 | bought:0 | sold:0 | reviewed:0 | pnl:T-13.09/R-8.45/U-4.64 | notes:skipped - Routine A saw TM down; cached
+2026-04-22 | day:15 | bought:0 | sold:0 | reviewed:0 | pnl:T-13.09/R-8.45/U-4.64 | notes:skipped - TM down 503; cached
+2026-04-21 | day:14 | bought:0 | sold:0 | reviewed:2 | pnl:T-13.09/R-8.45/U-4.64 | notes:clean; 1 err btc-updown-5m not open; bal $32.46 open 13
+2026-04-20 | day:13 | bought:0 | sold:0 | reviewed:5 | pnl:T-6.17/R-1.53/U-4.64 | notes:cycle 0b/0s/5r holds; later TM 503 DNS overflow
+2026-04-19 | day:12 | bought:0 | sold:0 | reviewed:0 | pnl:T-6.17/R-1.53/U-4.64 | notes:first IG post; 2nd same-day fire skipped
+
+===END LEDGER===
