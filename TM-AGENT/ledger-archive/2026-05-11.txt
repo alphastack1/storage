@@ -1,0 +1,30 @@
+===TRUTHMACHINE AGENT LEDGER===
+Last-updated: 2026-05-11T20:31:03Z
+
+---STANDING DIRECTIVES---
+- TM trades on Polymarket CLOB V2 (deploy 76f9081, 2026-04-28). Collateral is pUSD. Any error string containing 'order_version_mismatch' is a critical V2 regression — flag immediately.
+- TM auto-reconciles resolved positions and position shares every refresh-cycle (deploys 3b94360 + 3b6b60b). If a daily report shows REDEMPTION PENDING for a closed market, or persistent 'balance is not enough — balance: X, order amount: Y' errors, that's a bug — investigate.
+
+---STATE---
+Day-N: 34
+Last-balance: $82.77
+Last-deployed: $40.39
+Last-total-pnl: $3.87
+Last-realized-pnl: $2.31
+Last-unrealized-pnl: $1.56
+Last-open-positions: 8
+Refresh-triggered-at: 2026-05-10T20:11:22Z
+Refresh-cycleId: rc_1778443871722_uqv70w
+Refresh-status: triggered
+Bot-cycle-triggered-at: 2026-05-10T20:36:10Z
+Bot-cycleId: cycle_1778445360529_oi6ain
+
+---RUN LOG (most recent first, ~30 entries max)---
+2026-05-11 | day:34 | bought:0 | sold:0 | reviewed:0 | pnl:T3.87/R2.31/U1.56 | notes:SKIPPED-no-Routine-A today (last A: 2026-05-10T20:11Z, ~24h ago); state cached
+2026-05-10 | day:33 | bought:2 | sold:0 | reviewed:0 | pnl:T3.87/R2.31/U1.56 | notes:NO Iran-peace@73c, NO Spurs/Wolves@36c; 3 skipped (NegRisk/horizon/closed); 0 errors
+2026-05-09 | day:32 | bought:0 | sold:0 | reviewed:1 | pnl:T4.03/R2.31/U1.71 | notes:Israel GTC@16c hold; 5 skipped (thin/closed); 0 errors
+2026-05-08 | day:31 | bought:0 | sold:1 | reviewed:1 | pnl:T4.68/R2.31/U2.37 | notes:Slot YES expired_dust; Israel GTC@16c; 2 resolved+redeemed observed
+2026-05-07 | day:30 | bought:0 | sold:1 | reviewed:2 | pnl:T-0.93/R2.32/U-3.24 | notes:Swalwell NO expired_dust closed; 2 GTC holds
+2026-05-06 | day:29 | bought:0 | sold:0 | reviewed:3 | pnl:T-1.53/R2.32/U-3.85 | notes:2 redemptions, 1 GTC fail (swalwell invalid amounts)
+
+===END LEDGER===
