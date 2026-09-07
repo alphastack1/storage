@@ -1,0 +1,333 @@
+{
+  "accepted": true,
+  "cycleId": "rc_1777233896969_xjmiwt",
+  "config": {
+    "staleMaxAge": 24,
+    "stalePct": 33,
+    "volumePct": 34,
+    "newPct": 33,
+    "batchSize": 60,
+    "minVolume": 50000,
+    "categories": [],
+    "dryRun": false,
+    "delayMs": 5000,
+    "secret": "2G1c!"
+  },
+  "plan": [
+    {
+      "slug": "2026-nba-champion--will-the-san-antonio-spurs-win-the-2026-nba-finals",
+      "question": "Will the San Antonio Spurs win the 2026 NBA Finals?",
+      "type": "new-discovery",
+      "volume": 23745326.98069009
+    },
+    {
+      "slug": "english-premier-league-winner--will-manchester-united-win-the-202526-english-premier-league",
+      "question": "Will Manchester United win the 2025–26 English Premier League?",
+      "type": "new-discovery",
+      "volume": 16923974.87043873
+    },
+    {
+      "slug": "which-company-has-the-best-ai-model-end-of-april--will-openai-have-the-best-ai-model-at-the-end-of-april-2026",
+      "question": "Will OpenAI have the best AI model at the end of April 2026?",
+      "type": "new-discovery",
+      "volume": 3264600.2548990166
+    },
+    {
+      "slug": "big-game-champion-2027--will-the-carolina-panthers-win-the-2027-nfl-league-championship",
+      "question": "Will the Carolina Panthers win the 2027 NFL league championship?",
+      "type": "new-discovery",
+      "volume": 2921106.247965005
+    },
+    {
+      "slug": "cricipl-luc-kol-2026-04-26--cricipl-luc-kol-2026-04-26",
+      "question": "Indian Premier League: Lucknow Super Giants vs Kolkata Knight Riders",
+      "type": "new-discovery",
+      "volume": 2543449.248152008
+    },
+    {
+      "slug": "nba-lal-hou-2026-04-26--nba-lal-hou-2026-04-26",
+      "question": "Lakers vs. Rockets",
+      "type": "new-discovery",
+      "volume": 2329645.0506369965
+    },
+    {
+      "slug": "lol-shft-navi-2026-04-26--lol-shft-navi-2026-04-26",
+      "question": "LoL: Shifters vs Natus Vincere (BO3) - LEC Regular Season",
+      "type": "new-discovery",
+      "volume": 1384064.1197930023
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-21-april-28--elon-musk-of-tweets-april-21-april-28-160-179",
+      "question": "Will Elon Musk post 160-179 tweets from April 21 to April 28, 2026?",
+      "type": "new-discovery",
+      "volume": 659959.0522130003
+    },
+    {
+      "slug": "what-price-will-xrp-hit-in-april-2026--will-xrp-reach-3-in-april-2026",
+      "question": "Will XRP reach $3.00 in April?",
+      "type": "new-discovery",
+      "volume": 454951.1804119996
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-24-may-1--elon-musk-of-tweets-april-24-may-1-140-159",
+      "question": "Will Elon Musk post 140-159 tweets from April 24 to May 1, 2026?",
+      "type": "new-discovery",
+      "volume": 188734.8149309999
+    },
+    {
+      "slug": "will-jesus-christ-return-before-2027",
+      "question": "Will Jesus Christ return before 2027?",
+      "type": "volume-refresh",
+      "volume": 59849034.1955473
+    },
+    {
+      "slug": "fed-decision-in-april--will-the-fed-decrease-interest-rates-by-50-bps-after-the-april-2026-meeting",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+      "type": "volume-refresh",
+      "volume": 56007887.05200027
+    },
+    {
+      "slug": "presidential-election-winner-2028--will-lebron-james-win-the-2028-us-presidential-election",
+      "question": "Will LeBron James win the 2028 US Presidential Election?",
+      "type": "volume-refresh",
+      "volume": 48698607.157972425
+    },
+    {
+      "slug": "will-the-iranian-regime-fall-by-april-30",
+      "question": "Will the Iranian regime fall by April 30?",
+      "type": "volume-refresh",
+      "volume": 43000272.37604643
+    },
+    {
+      "slug": "republican-presidential-nominee-2028--will-mike-pence-win-the-2028-republican-presidential-nomination",
+      "question": "Will Mike Pence win the 2028 Republican presidential nomination?",
+      "type": "volume-refresh",
+      "volume": 39385493.881910674
+    },
+    {
+      "slug": "will-the-iranian-regime-fall-by-june-30",
+      "question": "Will the Iranian regime fall by June 30?",
+      "type": "volume-refresh",
+      "volume": 33929926.964428194
+    },
+    {
+      "slug": "2026-fifa-world-cup-winner-595--will-uzbekistan-win-the-2026-fifa-world-cup-773",
+      "question": "Will Uzbekistan win the 2026 FIFA World Cup?",
+      "type": "volume-refresh",
+      "volume": 33439379.483700093
+    },
+    {
+      "slug": "will-trump-acquire-greenland-before-2027",
+      "question": "Will Trump acquire Greenland before 2027?",
+      "type": "volume-refresh",
+      "volume": 32822102.133817293
+    },
+    {
+      "slug": "venezuela-leader-end-of-2026--will-richard-grenell-be-the-leader-of-venezuela-end-of-2026",
+      "question": "Will Richard Grenell be the leader of Venezuela end of 2026?",
+      "type": "volume-refresh",
+      "volume": 31922095.133678984
+    },
+    {
+      "slug": "strait-of-hormuz-traffic-returns-to-normal-by-april-30",
+      "question": "Strait of Hormuz traffic returns to normal by end of April?",
+      "type": "volume-refresh",
+      "volume": 30187141.453667954
+    },
+    {
+      "slug": "will-the-us-confirm-that-aliens-exist-before-2027--will-the-us-confirm-that-aliens-exist-before-2027-789-924-249",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "type": "volume-refresh",
+      "volume": 25232151.818799186
+    },
+    {
+      "slug": "uefa-champions-league-winner--will-atletico-madrid-win-the-202526-champions-league",
+      "question": "Will Atletico Madrid win the 2025–26 Champions League?",
+      "type": "volume-refresh",
+      "volume": 23466351.542841733
+    },
+    {
+      "slug": "will-china-invade-taiwan-before-2027",
+      "question": "Will China invade Taiwan by end of 2026?",
+      "type": "volume-refresh",
+      "volume": 23356220.824864004
+    },
+    {
+      "slug": "us-x-iran-permanent-peace-deal-by--us-x-iran-permanent-peace-deal-by-april-30-2026-925",
+      "question": "US x Iran permanent peace deal by April 30, 2026?",
+      "type": "volume-refresh",
+      "volume": 18195834.176235974
+    },
+    {
+      "slug": "will-the-us-invade-iran-before-2027",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "type": "volume-refresh",
+      "volume": 17606185.350968245
+    },
+    {
+      "slug": "will-the-iranian-regime-fall-by-the-end-of-2026",
+      "question": "Will the Iranian regime fall before 2027?",
+      "type": "volume-refresh",
+      "volume": 15934651.939275542
+    },
+    {
+      "slug": "who-will-be-confirmed-as-fed-chair--will-judy-shelton-be-confirmed-as-fed-chair",
+      "question": "Will Judy Shelton be confirmed as Fed Chair?",
+      "type": "volume-refresh",
+      "volume": 15886699.599295124
+    },
+    {
+      "slug": "russia-x-ukraine-ceasefire-before-2027",
+      "question": "Russia x Ukraine ceasefire by end of 2026?",
+      "type": "volume-refresh",
+      "volume": 14502613.985482976
+    },
+    {
+      "slug": "gta-vi-released-before-june-2026",
+      "question": "GTA VI released before June 2026?",
+      "type": "volume-refresh",
+      "volume": 13846884.299184026
+    },
+    {
+      "slug": "trump-announces-end-of-military-operations-against-iran-by--trump-announces-end-of-military-operations-against-iran-by-april-30th-753-882-164-769-641-926-643",
+      "question": "Trump announces end of military operations against Iran by April 30th?",
+      "type": "volume-refresh",
+      "volume": 8115331.802927876
+    },
+    {
+      "slug": "augusta-national-invitational-winner--will-xander-schauffele-win-the-2026-masters-tournament",
+      "question": "Will Xander Schauffele win the 2026 Masters tournament?",
+      "type": "stale-refresh",
+      "age": "20d ago"
+    },
+    {
+      "slug": "opensea-fdv-above-one-day-after-launch--opensea-fdv-above-100m-one-day-after-launch-172-151-588-987",
+      "question": "Opensea FDV above $100M one day after launch?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "2026-womens-wimbledon-winner--will-amanda-anisimova-be-the-2026-womens-wimbledon-winner",
+      "question": "Will Amanda Anisimova be the 2026 Women’s Wimbledon Winner?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "brazil-presidential-election-first-round-2nd-place--will-renan-santos-finish-in-second-place-in-the-first-round-of-the-2026-brazilian-presidential-election",
+      "question": "Will Renan Santos finish in second place in the first round of the 2026 Brazilian presidential election?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "2026-south-korean-local-elections-party-winner--will-the-people-power-party-ppp-win-the-2026-south-korean-local-elections",
+      "question": "Will the People Power Party (PPP) win the 2026 South Korean local elections?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "nhl-western-conference-champion-865--will-the-utah-mammoth-win-the-western-conference",
+      "question": "Will the Utah Mammoth win the Western Conference?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "2026-ncaa-tournament-winner--will-connecticut-win-the-2026-ncaa-tournament",
+      "question": "Will Connecticut win the 2026 NCAA Tournament?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "where-will-trump-and-putin-meet-next-584--will-trump-and-putin-meet-next-in-another-european-country-954-837-364",
+      "question": "Will Trump and Putin meet next in another EU country?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "ipos-before-2027--spacex-space-exploration-technologies-corp-ipo-before-2027",
+      "question": "SpaceX (Space Exploration Technologies Corp.) IPO before 2027?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "where-will-trump-and-putin-meet-next-584--will-trump-and-putin-meet-next-in-belarus-572",
+      "question": "Will Trump and Putin meet next in Belarus?",
+      "type": "stale-refresh",
+      "age": "19d ago"
+    },
+    {
+      "slug": "what-price-will-bitcoin-hit-in-april-2026--will-bitcoin-dip-to-60k-in-april-2026",
+      "question": "Will Bitcoin dip to $60,000 in April?",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    },
+    {
+      "slug": "ucl-psg1-liv1-2026-04-08--ucl-psg1-liv1-2026-04-08-psg1",
+      "question": "Will Paris Saint-Germain FC win on 2026-04-08?",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    },
+    {
+      "slug": "predictfun-fdv-above-one-day-after-launch--predictfun-fdv-above-200m-one-day-after-launch",
+      "question": "Predict.fun FDV above $200M one day after launch?",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    },
+    {
+      "slug": "us-obtains-iranian-enriched-uranium-by-may-31",
+      "question": "US obtains Iranian enriched uranium by May 31?",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    },
+    {
+      "slug": "lol-dk-hle1-2026-04-08--lol-dk-hle1-2026-04-08",
+      "question": "LoL: Dplus KIA vs Hanwha Life Esports (BO3) - LCK Rounds 1-2",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    },
+    {
+      "slug": "bitcoin-above-on-april-8--bitcoin-above-66k-on-april-8",
+      "question": "Will the price of Bitcoin be above $66,000 on April 8?",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-3-april-10--elon-musk-of-tweets-april-3-april-10-160-179",
+      "question": "Will Elon Musk post 160-179 tweets from April 3 to April 10, 2026?",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    },
+    {
+      "slug": "elon-musk-of-tweets-april-7-april-14--elon-musk-of-tweets-april-7-april-14-580plus",
+      "question": "Will Elon Musk post 580+ tweets from April 7 to April 14, 2026?",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    },
+    {
+      "slug": "eurovision-winner-2026--will-estonia-win-eurovision-2026",
+      "question": "Will Estonia win Eurovision 2026?",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    },
+    {
+      "slug": "gc-hit-jun-2026--gc-hit-5500-high-jun-2026-424-457-376-356",
+      "question": "Will Gold (GC) hit (HIGH) $5,500 by end of June?",
+      "type": "stale-refresh",
+      "age": "18d ago"
+    }
+  ],
+  "summary": {
+    "newDiscoveries": 10,
+    "volumeRefreshes": 20,
+    "staleRefreshes": 20,
+    "totalMarkets": 50
+  },
+  "resolvedSync": {
+    "checked": 11,
+    "resolved": 0,
+    "redeemed": 0,
+    "totalRedeemedUsd": 0,
+    "errors": [],
+    "details": []
+  },
+  "message": "Refresh cycle started. 50 markets will be processed in the background."
+}
