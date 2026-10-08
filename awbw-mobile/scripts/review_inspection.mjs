@@ -5,7 +5,7 @@ const data=JSON.parse(await readFile(file,'utf8'));
 if(!['field-command-inspection-v1','field-command-inspection-v2'].includes(data.format)||!Array.isArray(data.contracts))throw new Error('Unsupported inspection export.');
 const contracts=data.contracts;
 const state=contracts.filter(c=>c.responseSample&&/"(?:units|units_id|units_x|terrain|buildings)"/.test(JSON.stringify(c.responseSample)));
-const actions=contracts.filter(c=>c.requestSample?.action||/(?:move|attack|capture|end_?turn|build|buy|purchase|action|order)/i.test(c.path));
+const actions=contracts.filter(c=>(c.transport==='websocket'?c.direction==='outgoing'&&c.requestSample?.action:(!/(?:fetch_|load_|stats|time)/i.test(c.path)&&(c.requestSample?.action||/(?:move|attack|capture|end_?turn|build|buy|purchase|order)/i.test(c.path)))));
 const acknowledged=actions.filter(c=>c.status>=200&&c.status<300&&c.responseSample?.success===true);
 const rejected=actions.filter(c=>c.status>=400||c.status===0||c.responseSample?.success===false);
 const sockets=contracts.filter(c=>c.transport==='websocket');
