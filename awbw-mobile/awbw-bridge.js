@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Field Command — AWBW read-only bridge
 // @namespace    field-command-awbw-bridge
-// @version      0.3.0
+// @version      0.4.0
 // @description  Mirror rendered AWBW sprites into Field Command and export inspection data. Never submits game orders.
 // @match        https://awbw.amarriner.com/game.php*
 // @grant        none
@@ -38,6 +38,19 @@ function visible(node){const r=node.getBoundingClientRect(),style=getComputedSty
 function candidates(){const out=[];for(const node of document.querySelectorAll('img,[style],[class*="terrain"],[class*="tile"]')){if(host?.contains(node)||!visible(node))continue;const style=getComputedStyle(node),r=node.getBoundingClientRect();let source,background=false;if(node.tagName==='IMG')source=sourceUrl(node.currentSrc||node.src);else{const match=style.backgroundImage.match(/^url\(["']?(.+?)["']?\)$/);if(match){source=sourceUrl(match[1]);background=true;}}if(!source)continue;const filename=new URL(source).pathname.split('/').pop();if(!source.includes('/ani/')&&!unitPattern.test(source)&&filename!=='terrain_spritesheet.png'&&!/^(neutral|orangestar|greenearth|bluemoon).*\.gif$/i.test(filename))continue;out.push({node,r,style,source,background,kind:unitPattern.test(source)?'unit':'terrain'});}return out;}
 function filters(node,root){const list=[];let opacity=1;for(let n=node;n;n=n.parentElement){const style=getComputedStyle(n);opacity*=Number(style.opacity);if(style.filter!=='none')list.push(style.filter);if(n===root)break;}return{opacity,filter:list.join(' ')};}
 function normalizedCss(value,node){const factor=16/(parseFloat(node.style.width)||16);return value.replace(/(-?\d+(?:\.\d+)?)px/g,(_,n)=>`${Number(n)*factor}px`);}
+function visibleGameState(root,width,height){
+ const result={readOnly:true,canSendOrders:false,viewerPlayerId:null,currentPlayerId:null,units:[]};
+ try{const viewer=typeof window.getViewerPId==='function'?window.getViewerPId():window.viewerPId;result.viewerPlayerId=Number.isInteger(Number(viewer))&&Number(viewer)>0?Number(viewer):null;result.currentPlayerId=Number.isInteger(Number(window.currentTurn))&&Number(window.currentTurn)>0?Number(window.currentTurn):null;const fog=document.querySelector('#fog-canvas'),fogCtx=fog?.getContext('2d');
+ for(const span of root.querySelectorAll('.game-unit[data-unit-id]')){if(!visible(span))continue;const unit=window.unitsInfo?.[span.dataset.unitId];if(!unit)continue;const x=Number(unit.units_x),y=Number(unit.units_y),id=Number(unit.units_id),owner=Number(unit.units_players_id);if(![id,owner,x,y].every(Number.isInteger)||x<0||y<0||x>=width||y>=height)continue;
+ let z=0;for(let n=span;n&&n!==root;n=n.parentElement){const value=getComputedStyle(n).zIndex;if(value!=='auto'){z=Number(value)||0;break;}}
+ if(fogCtx&&visible(fog)&&z<104){try{if(fogCtx.getImageData(x*16+8,y*16+8,1,1).data[3]>0)continue;}catch{continue;}}
+ const numeric=(value,max)=>value!==null&&value!==undefined&&value!==''&&Number.isFinite(Number(value))&&Number(value)>=0&&Number(value)<=max?Number(value):null;
+ const name=typeof unit.units_name==='string'&&/^[A-Za-z .-]{1,24}$/.test(unit.units_name)?unit.units_name:'Visible unit';
+ result.units.push({id,owner,x,y,name,hp:numeric(unit.units_hit_points,10),fuel:numeric(unit.units_fuel,999),ammo:numeric(unit.units_ammo,99),spent:unit.units_moved===1});
+ }
+ }catch{/* Missing globals leave unit details unavailable, not guessed. */}
+ return result;
+}
 function officialFrame(){
  const root=document.querySelector('#gamemap'),ground=document.querySelector('canvas#map-background');
  if(!root||!ground)return null;
@@ -49,7 +62,7 @@ function officialFrame(){
  const nodes=[...root.querySelectorAll('canvas,img')].filter(n=>visible(n)&&(!n.closest('.unit-options-game,.build-options-game')||n===ground)).sort((a,b)=>zIndex(a)-zIndex(b));
  for(const node of nodes){const r=node.getBoundingClientRect();if(node.tagName==='IMG'&&(!node.complete||!node.naturalWidth))continue;const effect=filters(node,root);ctx.globalAlpha=effect.opacity;ctx.filter=effect.filter||'none';try{ctx.drawImage(node,(r.left-origin.left)*sx,(r.top-origin.top)*sy,r.width*sx,r.height*sy);}catch{}}
  const frame=canvas.toDataURL('image/png');if(frame.length>4000000)throw new Error('Rendered map exceeds snapshot size limit.');
- return{format:'field-command-snapshot-v2',gameId:new URL(location.href).searchParams.get('games_id'),title:`AWBW #${new URL(location.href).searchParams.get('games_id')}`,day:Number(document.body.innerText.match(/\bDay\s+(\d+)/i)?.[1])||null,capturedAt:new Date().toISOString(),map:{width,height,tileSize:16,layers:[],frame},coverage:{renderedOnly:true,warning:'Read-only pixel mirror of the original map canvas, fog, and visible sprites. Game orders remain in AWBW.'}};
+ return{format:'field-command-snapshot-v2',gameId:new URL(location.href).searchParams.get('games_id'),title:`AWBW #${new URL(location.href).searchParams.get('games_id')}`,day:Number(document.body.innerText.match(/\bDay\s+(\d+)/i)?.[1])||null,game:visibleGameState(root,width,height),capturedAt:new Date().toISOString(),map:{width,height,tileSize:16,layers:[],frame},coverage:{renderedOnly:true,warning:'Read-only pixel mirror of the original map canvas, fog, and visible sprites. Game orders remain in AWBW.'}};
 }
 function snapshot(){const official=officialFrame();if(official)return official;const all=candidates();if(all.length<12)throw new Error('Not enough rendered map sprites found. Let the map finish loading.');const groups=new Map();for(const c of all){let parent=c.node.parentElement;for(let d=0;parent&&d<7;d++,parent=parent.parentElement){if(parent===document.body||parent===document.documentElement)break;const r=parent.getBoundingClientRect();if(r.width<100||r.height<80||r.width>3000||r.height>3000)continue;if(!groups.has(parent))groups.set(parent,[]);groups.get(parent).push(c);}}
 let best=null,score=0;for(const[node,items]of groups){if(items.length<12)continue;const r=node.getBoundingClientRect();const widths=items.map(c=>Math.round(c.r.width));const counts=new Map();widths.forEach(w=>counts.set(w,(counts.get(w)||0)+1));const tile=[...counts].sort((a,b)=>b[1]-a[1])[0][0];if(tile<8||tile>128)continue;const cells=r.width*r.height/(tile*tile);const density=Math.min(1,items.length/Math.max(1,cells));const value=items.length*(.25+density);if(value>score){score=value;best={node,items,tile};}}

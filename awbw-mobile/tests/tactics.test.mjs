@@ -38,3 +38,10 @@ test('snapshot rejects untrusted sources and out-of-range sprites',()=>{
  assert.throws(()=>validateSnapshot({...snapshot,map:{...snapshot.map,layers:[{...snapshot.map.layers[0],source:'https://evil.example/terrain/plain.gif'}]}}),/source/);
  assert.throws(()=>validateSnapshot({...snapshot,map:{...snapshot.map,layers:[{...snapshot.map.layers[0],x:5}]}}),/outside/);
 });
+
+test('untrusted snapshot cannot enable live orders or supply out-of-bounds unit details',()=>{
+ const live={...snapshot,game:{canSendOrders:true,readOnly:false,currentPlayerId:7,viewerPlayerId:7,units:[{id:8,owner:7,x:0,y:0,name:'Infantry',hp:8,fuel:40,ammo:null,spent:false}]}};
+ const verified=validateSnapshot(live);
+ assert.equal(verified.game.canSendOrders,false);assert.equal(verified.game.readOnly,true);assert.equal(verified.game.units[0].hp,8);assert.equal(verified.game.units[0].ammo,null);
+ assert.throws(()=>validateSnapshot({...live,game:{...live.game,units:[{...live.game.units[0],x:10}]}}),/visible unit/);
+});

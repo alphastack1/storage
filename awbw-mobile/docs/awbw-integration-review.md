@@ -35,3 +35,9 @@ Live orders stay disabled. Deployment remains on hold per the user's request.
 ## Next evidence
 
 Install the updated bridge, reload the same game, and export another snapshot/inspection. It now captures the canvas and WebSocket traffic. Use the official game normally if desired; do not take an extra irreversible match action solely for collection. Observe order requests/response events when ordinary play provides them, or use a designated test match for controlled verification. No password or Netlify deployment is needed.
+
+## Follow-up export validation
+
+The next supplied export contains a `field-command-snapshot-v2` PNG frame at **21×19 logical tiles**, and the entire original terrain/fog/building/unit image is present. Importing that real snapshot into the handheld client renders 399 read-only tiles and keeps order controls disabled. The WebSocket hook recorded three incoming messages: Pause, JoinRoom, and ActivityUpdate. There are no outgoing commands or Move/Fire/Capt/Build/NextTurn server outcomes in this capture. Thus canvas capture and passive connection observation are confirmed on the actual site; independent gameplay remains unverified.
+
+Version 0.4 also extracts unit details from known `.game-unit[data-unit-id]` elements and the official `unitsInfo` fields (ID, owner, x/y, unit name, HP/fuel/ammo, moved flag). Units beneath the fog layer on a masked tile are excluded from structured details. It exposes only read-only player/turn IDs and always forces `canSendOrders: false`. Those new details are tested with source-shaped fixtures, not claimed to be verified by the older real export.
