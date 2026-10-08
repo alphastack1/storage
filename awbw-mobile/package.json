@@ -7,7 +7,8 @@
     "dev": "node server.mjs",
     "start": "node server.mjs",
     "build": "node build.mjs",
-    "test": "python3 tests/browser_smoke.py && python3 tests/asset_flow.py && python3 tests/bundled_assets.py",
-    "import-assets": "python3 scripts/import_assets.py"
+    "test": "node --test tests/tactics.test.mjs && python3 tests/browser_smoke.py && python3 tests/asset_flow.py && python3 tests/bundled_assets.py && python3 tests/handheld_bridge.py",
+    "import-assets": "python3 scripts/import_assets.py",
+    "package": "npm run build && python3 scripts/package_site.py"
   }
 }

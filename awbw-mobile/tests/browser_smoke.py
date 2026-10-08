@@ -18,7 +18,7 @@ with sync_playwright() as p:
     page = browser.new_page(viewport={'width': 1440, 'height': 1000})
     errors = []
     page.on('pageerror', lambda error: errors.append(str(error)))
-    page.goto('http://localhost:5173')
+    page.goto('http://localhost:5173/operations.html')
     page.locator('.game-card').first.wait_for()
     assert page.locator('.game-card').count() == 3
     page.locator('[data-filter="turn"]').click()
@@ -32,7 +32,7 @@ with sync_playwright() as p:
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
     page.screenshot(path=str(ROOT / 'artifacts/mobile.png'), full_page=True)
     page.locator('#new-game').click()
-    assert page.locator('a[href="field-command.user.js"]').is_visible()
+    assert page.locator('a[href="play.html"]').is_visible()
     assert page.request.get('http://localhost:5173/field-command.user.js').status == 200
     assert not errors, errors
     page.close()
