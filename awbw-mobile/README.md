@@ -54,11 +54,11 @@ With Python Playwright and Chromium installed, run the dev server in one termina
 
 ## Original asset collection and handheld workbench
 
-AWBW remains inaccessible from this environment. No original AWBW files have been downloaded yet.
+The supplied AWBW asset pack is imported and included in the build: 530 unique files from 557 source records, including 219 animated images. Visitors load the bundled artwork automatically; friends do not need the collector or a ZIP. Source URLs and hashes remain in `assets/catalog.json`. AWBW backend access from this environment is still blocked.
 
 Install `asset-collector.user.js` using your userscript manager. On an AWBW game/map/CO page, open the Field Command Asset Pack panel and choose **Capture this page**. Captured public images accumulate in IndexedDB across pages. Choose **Export ZIP** to download original image bytes and a source-tracked manifest. Requests omit credentials; account/session data is not exported. GIF animation bytes are preserved. Files larger than 2 MB or total packs over 64 MB are skipped and reported. Discovery covers loaded images/resources and readable CSS, not assets the browser has never loaded.
 
-Open `asset-library.html` and **Load asset ZIP** to preview the pack immediately in a GBA-style sprite workbench. Place terrain and transparent unit sprites on a 16×10 screen, use the D-pad and A/B controls, or fill the map with a terrain tile. This is an art sandbox, not a live match. No game actions are sent.
+Open `asset-library.html` to use the bundled artwork immediately. **Add another pack** optionally loads an additional exported ZIP in a GBA-style sprite workbench. Place terrain and transparent unit sprites on a 16×10 screen, use the D-pad and A/B controls, or fill the map with a terrain tile. This is an art sandbox, not a live match. No game actions are sent.
 
 To persist the files inside this isolated project:
 

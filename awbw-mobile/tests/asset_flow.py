@@ -68,6 +68,7 @@ with tempfile.TemporaryDirectory() as temp, sync_playwright() as p:
     except ValueError:pass
     assert not (Path(temp)/'escape.gif').exists()
     page=browser.new_page(viewport={'width':390,'height':844})
+    page.route('**/assets/catalog.json', lambda r:r.fulfill(status=200,content_type='application/json',body='{"assets":[]}'))
     page.goto('http://localhost:5173/asset-library.html')
     page.wait_for_function("document.querySelector('#workbench-status').textContent.includes('No AWBW files')")
     assert page.locator('.sprite').count()==0
