@@ -1,0 +1,13 @@
+{
+  "name": "field-command",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "node build.mjs",
+    "test": "python3 tests/browser_smoke.py && python3 tests/asset_flow.py",
+    "import-assets": "python3 scripts/import_assets.py"
+  }
+}
