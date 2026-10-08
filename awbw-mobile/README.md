@@ -14,7 +14,7 @@ The supplied art pack is bundled: **530 unique files, 557 source records, 219 an
 
 - Send a read-only rendering of visible map sprites to the hosted Field Command client in another tab, with source/origin-checked `postMessage` communication.
 - Export a rendered map snapshot for manual loading from the client’s Menu.
-- Observe requests the official interface already makes: method, path, parameter names, and JSON response types. Values, cookies, headers, full HTML, inline scripts, and account credentials are not exported.
+- Observe requests the official interface already makes: method, path, parameter names, and JSON response types. Only whitelisted numeric/enum game-state and action examples are retained. Authentication values, arbitrary strings, cookies, headers, full HTML, inline scripts, and account credentials are not exported.
 - Export inspection data with public `.js`/`.css` source files retrieved without credentials, for implementing the real backend adapter.
 
 The bridge **does not submit game orders**. The live viewer is a DOM mirror, not a verified game-state API. HP, ownership, terrain semantics, fog logic, player identity, and turn permissions are not inferred. Unknown tiles/assets are visibly marked. Sprite container detection is heuristic and may fail on real AWBW markup; inspection exports still contain diagnostic information and public source when possible. The development environment cannot reach AWBW, so real-site integration and mutation contracts remain unverified. Use the original AWBW page for real orders.
@@ -74,3 +74,17 @@ npm run build
 ```
 
 The importer validates all manifest paths and SHA-256 before writing inside `assets/`. Source URLs and attribution remain recorded. This is a developer maintenance step, not a setup requirement for friends.
+
+## Pre-deployment integration review
+
+Netlify deployment is on hold until the live integration is inspected. You can run the bridge directly on your logged-in AWBW game **without a Field Command site or Netlify**. Install the read-only bridge, reload the game, expand its panel, and choose Export inspection. Using the official controls normally while the inspector is installed can add state/order examples; no extra game action is necessary solely for collection.
+
+Version 0.2 exports whitelisted numeric/enum game-state and action values (for example unit IDs, x/y, HP, funds, and explicit success/failure), plus type schemas and public client source. Sensitive fields and arbitrary strings are excluded. Exported outcomes are observations of AWBW's official client, not evidence that independent orders have been tested. No password is needed; the original browser session stays on AWBW.
+
+Review an export locally:
+
+```sh
+npm run review-inspection -- /path/to/awbw-inspection-123.json
+```
+
+This prints evidence coverage and missing live-order checks. It does not contact AWBW or submit commands. Independent live orders remain disabled until exact contracts, active-player permissions, stale/duplicate request behavior, server acknowledgments, and designated test-match operations are verified against the real site.

@@ -1,5 +1,5 @@
 export function validateSnapshot(input) {
-  const s=input?.format==='field-command-inspection-v1'?input.snapshot:input;
+  const s=['field-command-inspection-v1','field-command-inspection-v2'].includes(input?.format)?input.snapshot:input;
   if(s?.format!=='field-command-snapshot-v1')throw new Error('Use a snapshot exported by the AWBW bridge.');
   if(!/^\d+$/.test(String(s.gameId)))throw new Error('Invalid game ID.');
   const map=s.map;

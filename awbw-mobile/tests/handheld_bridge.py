@@ -36,6 +36,7 @@ with sync_playwright() as p, tempfile.TemporaryDirectory() as temp:
         if url.endswith('.gif'):r.fulfill(status=200,content_type='image/gif',body=(ROOT/'assets/b9a5c81617a9ee6e-plain.gif').read_bytes())
         elif url.endswith('/game.js'):r.fulfill(status=200,content_type='text/javascript',body='/* public client fixture */')
         elif url.endswith('/game.css'):r.fulfill(status=200,content_type='text/css',body='.tile{position:relative}')
+        elif '/order.php' in url:r.fulfill(status=409,content_type='application/json',body=json.dumps({'success':False,'state':{'day':11},'authToken':'fixture-secret'}))
         elif '/state.php' in url:r.fulfill(status=200,content_type='application/json',body=json.dumps({'units':[{'id':7,'hp':10}],'authToken':'fixture-secret','csrf':'private'}))
         else:r.fulfill(status=200,content_type='text/html',body=html)
     context=browser.new_context(accept_downloads=True)
@@ -49,16 +50,20 @@ with sync_playwright() as p, tempfile.TemporaryDirectory() as temp:
     with awbw.expect_download() as downloaded:
         awbw.locator('#fc-bridge-tool #snapshot').click()
     snapshot_path=Path(temp)/'snapshot.json';downloaded.value.save_as(snapshot_path)
+    awbw.evaluate("fetch('/order.php?games_id=1741140',{method:'POST',body:new URLSearchParams({action:'move',units_id:'7',x:'3',y:'4',csrf:'fixture-secret'})}).then(r=>r.json())")
     snapshot=json.loads(snapshot_path.read_text());assert snapshot['map']['width']==16 and snapshot['map']['height']==10
     assert len(snapshot['map']['layers'])==160
     with awbw.expect_download() as downloaded:
         awbw.locator('#fc-bridge-tool #inspect').click()
     inspection_path=Path(temp)/'inspection.json';downloaded.value.save_as(inspection_path)
-    inspection=json.loads(inspection_path.read_text());assert len(inspection['publicFiles'])==2
+    inspection=json.loads(inspection_path.read_text());assert inspection['format']=='field-command-inspection-v2';assert len(inspection['publicFiles'])==2
     assert 'fixture-secret' not in inspection_path.read_text() and 'private' not in inspection_path.read_text()
     assert inspection['contracts'][0]['path']=='/state.php'
     assert inspection['contracts'][0]['responseSchema']['units']['array']['hp']=='number'
-    assert all(method=='GET' for method,url in calls)
+    assert len([1 for method,url in calls if method=='POST'])==1  # issued only by the fixture official page
+    move=next(c for c in inspection['contracts'] if c['path']=='/order.php')
+    assert move['status']==409 and move['responseSample']['success'] is False
+    assert move['requestSample']=={'games_id':'1741140','action':'move','units_id':'7','x':'3','y':'4'}
     # Load snapshot in the handheld; real orders remain disabled.
     field=context.new_page();field.goto('http://localhost:5173/play.html')
     field.locator('.map-cell').first.wait_for();field.locator('#menu-open').click();field.locator('#snapshot-input').set_input_files(snapshot_path)
