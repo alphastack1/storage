@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Field Command — AWBW read-only bridge
 // @namespace    field-command-awbw-bridge
-// @version      0.2.0
+// @version      0.3.0
 // @description  Mirror rendered AWBW sprites into Field Command and export inspection data. Never submits game orders.
 // @match        https://awbw.amarriner.com/game.php*
 // @grant        none
@@ -10,9 +10,9 @@
 // ==/UserScript==
 const FC_INSPECTION=(()=>{// Read-only evidence sanitizers shared by the userscript build and local tests.
 const secretKey=/auth|token|secret|password|cookie|session|csrf|nonce|signature|hash|email|chat|message|private|account|key/i;
-const safeField=/^(?:id|x|y|hp|health|fuel|ammo|army|owner|type|name|capture|movement|moved|attacked|finished|version|turn|day|funds|weather|fog|success|error|status|result|action|unit|player|coordinates|destination|path|moves|game|gameData|game_data|data|response|state|units|players|map|terrain|buildings|properties|active_player|current_turn|current_player|(?:games?|units?|players?|maps?|terrain|buildings?)_(?:id|x|y|hp|health|fuel|ammo|army|owner|type|name|capture|movement|moved|attacked|finished|version|turn|day|funds|fog))$/i;
-const safeRequestField=/^(?:x|y|action|type|destination|path|moves|turn|day|(?:games?|units?|players?|turn)_(?:id|x|y))$/i;
-const enumValue=/^(?:move|attack|capture|wait|end[ _-]?turn|build|buy|purchase|infantry|mech|tank|md[ ._-]?tank|neotank|megatank|recon|apc|artillery|rocket|missile|anti[ -]?air|b[ -]?copter|t[ -]?copter|fighter|bomber|cruiser|battleship|lander|sub|carrier|plain|forest|mountain|road|bridge|sea|river|city|base|airport|port|hq|snow|rain|clear|fog|success|error|ok|os|ge|bm|yc|bh)$/i;
+const safeField=/^(?:id|x|y|hp|health|fuel|ammo|army|owner|type|name|capture|movement|moved|attacked|finished|version|turn|day|funds|weather|fog|success|error|status|result|action|unit|player|gameId|stateTime|playerID|unitID|buildingID|attacker|defender|err|Move|Fire|Capt|Build|NextTurn|End|coordinates|destination|path|moves|game|gameData|game_data|data|response|state|units|players|map|terrain|buildings|properties|active_player|current_turn|current_player|(?:games?|units?|players?|maps?|terrain|buildings?)_(?:id|x|y|hp|hit_points|players_id|team|health|fuel|ammo|army|owner|type|name|capture|movement|movement_points|moved|attacked|finished|version|turn|day|funds|fog))$/i;
+const safeRequestField=/^(?:x|y|action|type|destination|path|moves|turn|day|gameId|stateTime|playerID|unitID|buildingID|attacker|defender|(?:games?|units?|players?|turn)_(?:id|x|y))$/i;
+const enumValue=/^(?:move|fire|capt|end|nextturn|attack|capture|wait|end[ _-]?turn|build|buy|purchase|infantry|mech|tank|md[ ._-]?tank|neotank|megatank|recon|apc|artillery|rocket|missile|anti[ -]?air|b[ -]?copter|t[ -]?copter|fighter|bomber|cruiser|battleship|lander|sub|carrier|plain|forest|mountain|road|bridge|sea|river|city|base|airport|port|hq|snow|rain|clear|fog|success|error|ok|os|ge|bm|yc|bh)$/i;
 function schema(value,depth=0){
  if(depth>4)return '…';
  if(Array.isArray(value))return{array:value.length?schema(value[0],depth+1):'empty'};
@@ -53,6 +53,15 @@ window.fetch=function(input,init){const result=originalFetch.apply(this,argument
 const open=XMLHttpRequest.prototype.open,send=XMLHttpRequest.prototype.send,requests=new WeakMap();
 XMLHttpRequest.prototype.open=function(method,url){requests.set(this,{method,url});return open.apply(this,arguments);};
 XMLHttpRequest.prototype.send=function(body){const info=requests.get(this);if(info)this.addEventListener('loadend',()=>{let shape=null,sample=null;try{const data=this.responseType==='json'?this.response:(this.getResponseHeader('content-type')||'').includes('json')&&this.responseText.length<200000?JSON.parse(this.responseText):null;if(data!==null){shape=FC_INSPECTION.schema(data);sample=FC_INSPECTION.responseSample(data);}}catch{}record(info.url,info.method,this.status,fields(body),shape,FC_INSPECTION.requestSample(body,info.url),sample);},{once:true});return send.apply(this,arguments);};
+// AWBW's official client sends orders through WebSocket (game.js emitData).
+// Observe native traffic only; this inspector never opens a socket or sends an order.
+const NativeWebSocket=window.WebSocket;
+if(NativeWebSocket){
+ const nativeSend=NativeWebSocket.prototype.send;
+ function socketEvidence(socket,direction,payload){try{if(typeof payload!=='string'||payload.length>200000)return;const data=JSON.parse(payload);if(!data||typeof data!=='object')return;const url=new URL(socket.url);contracts.push({transport:'websocket',path:url.pathname,direction,method:direction==='outgoing'?'WS_SEND':'WS_RECEIVE',status:null,requestFieldNames:direction==='outgoing'?Object.keys(data):[],requestSample:direction==='outgoing'?FC_INSPECTION.requestSample(JSON.stringify(data),'https://awbw.amarriner.com/'):{},responseSchema:direction==='incoming'?FC_INSPECTION.schema(data):null,responseSample:direction==='incoming'?FC_INSPECTION.responseSample(data):null,evidence:'observed-official-websocket; not an independently verified order'});if(contracts.length>150)contracts.shift();}catch{}}
+ NativeWebSocket.prototype.send=function(payload){socketEvidence(this,'outgoing',payload);return nativeSend.apply(this,arguments);};
+ window.WebSocket=new Proxy(NativeWebSocket,{construct(Target,args){const socket=Reflect.construct(Target,args);socket.addEventListener('message',event=>socketEvidence(socket,'incoming',event.data));return socket;}});
+}
 let host,ui,status,client=null,clientOrigin='',timer,observer,lastError='',lastSent='',connected=false;
 const unitPattern=/(?:^|\/)(?:aa|ab|ar|bd|bh|bm|ci|ge|gs|js|ne|os|pc|pl|rf|sc|tg|uw|wn|yc)(?:infantry|mech|tank|md\.tank|neotank|megatank|recon|apc|artillery|rocket|missile|anti-air|b-copter|t-copter|fighter|bomber|stealth|lander|cruiser|battleship|sub|carrier|blackboat|blackbomb|piperunner)\.(gif|png)$/i;
 function sourceUrl(raw){try{const u=new URL(raw,location.href);if(u.origin!==location.origin||!u.pathname.startsWith('/terrain/')||!/\.(gif|png|webp|jpe?g)$/i.test(u.pathname))return null;u.search='';u.hash='';return u.href;}catch{return null;}}
@@ -60,7 +69,20 @@ function visible(node){const r=node.getBoundingClientRect(),style=getComputedSty
 function candidates(){const out=[];for(const node of document.querySelectorAll('img,[style],[class*="terrain"],[class*="tile"]')){if(host?.contains(node)||!visible(node))continue;const style=getComputedStyle(node),r=node.getBoundingClientRect();let source,background=false;if(node.tagName==='IMG')source=sourceUrl(node.currentSrc||node.src);else{const match=style.backgroundImage.match(/^url\(["']?(.+?)["']?\)$/);if(match){source=sourceUrl(match[1]);background=true;}}if(!source)continue;const filename=new URL(source).pathname.split('/').pop();if(!source.includes('/ani/')&&!unitPattern.test(source)&&filename!=='terrain_spritesheet.png'&&!/^(neutral|orangestar|greenearth|bluemoon).*\.gif$/i.test(filename))continue;out.push({node,r,style,source,background,kind:unitPattern.test(source)?'unit':'terrain'});}return out;}
 function filters(node,root){const list=[];let opacity=1;for(let n=node;n;n=n.parentElement){const style=getComputedStyle(n);opacity*=Number(style.opacity);if(style.filter!=='none')list.push(style.filter);if(n===root)break;}return{opacity,filter:list.join(' ')};}
 function normalizedCss(value,node){const factor=16/(parseFloat(node.style.width)||16);return value.replace(/(-?\d+(?:\.\d+)?)px/g,(_,n)=>`${Number(n)*factor}px`);}
-function snapshot(){const all=candidates();if(all.length<12)throw new Error('Not enough rendered map sprites found. Let the map finish loading.');const groups=new Map();for(const c of all){let parent=c.node.parentElement;for(let d=0;parent&&d<7;d++,parent=parent.parentElement){if(parent===document.body||parent===document.documentElement)break;const r=parent.getBoundingClientRect();if(r.width<100||r.height<80||r.width>3000||r.height>3000)continue;if(!groups.has(parent))groups.set(parent,[]);groups.get(parent).push(c);}}
+function officialFrame(){
+ const root=document.querySelector('#gamemap'),ground=document.querySelector('canvas#map-background');
+ if(!root||!ground)return null;
+ if(!ground.width||!ground.height||ground.width%16||ground.height%16)throw new Error('Unexpected AWBW terrain canvas dimensions.');
+ const width=ground.width/16,height=ground.height/16;if(width>128||height>128)throw new Error('AWBW map is too large.');
+ const canvas=document.createElement('canvas');canvas.width=ground.width;canvas.height=ground.height;const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=false;
+ const origin=ground.getBoundingClientRect(),sx=ground.width/origin.width,sy=ground.height/origin.height;
+ function zIndex(node){for(let n=node;n&&n!==root;n=n.parentElement){const z=getComputedStyle(n).zIndex;if(z!=='auto')return Number(z)||0;}return 0;}
+ const nodes=[...root.querySelectorAll('canvas,img')].filter(n=>visible(n)&&(!n.closest('.unit-options-game,.build-options-game')||n===ground)).sort((a,b)=>zIndex(a)-zIndex(b));
+ for(const node of nodes){const r=node.getBoundingClientRect();if(node.tagName==='IMG'&&(!node.complete||!node.naturalWidth))continue;const effect=filters(node,root);ctx.globalAlpha=effect.opacity;ctx.filter=effect.filter||'none';try{ctx.drawImage(node,(r.left-origin.left)*sx,(r.top-origin.top)*sy,r.width*sx,r.height*sy);}catch{}}
+ const frame=canvas.toDataURL('image/png');if(frame.length>4000000)throw new Error('Rendered map exceeds snapshot size limit.');
+ return{format:'field-command-snapshot-v2',gameId:new URL(location.href).searchParams.get('games_id'),title:`AWBW #${new URL(location.href).searchParams.get('games_id')}`,day:Number(document.body.innerText.match(/\bDay\s+(\d+)/i)?.[1])||null,capturedAt:new Date().toISOString(),map:{width,height,tileSize:16,layers:[],frame},coverage:{renderedOnly:true,warning:'Read-only pixel mirror of the original map canvas, fog, and visible sprites. Game orders remain in AWBW.'}};
+}
+function snapshot(){const official=officialFrame();if(official)return official;const all=candidates();if(all.length<12)throw new Error('Not enough rendered map sprites found. Let the map finish loading.');const groups=new Map();for(const c of all){let parent=c.node.parentElement;for(let d=0;parent&&d<7;d++,parent=parent.parentElement){if(parent===document.body||parent===document.documentElement)break;const r=parent.getBoundingClientRect();if(r.width<100||r.height<80||r.width>3000||r.height>3000)continue;if(!groups.has(parent))groups.set(parent,[]);groups.get(parent).push(c);}}
 let best=null,score=0;for(const[node,items]of groups){if(items.length<12)continue;const r=node.getBoundingClientRect();const widths=items.map(c=>Math.round(c.r.width));const counts=new Map();widths.forEach(w=>counts.set(w,(counts.get(w)||0)+1));const tile=[...counts].sort((a,b)=>b[1]-a[1])[0][0];if(tile<8||tile>128)continue;const cells=r.width*r.height/(tile*tile);const density=Math.min(1,items.length/Math.max(1,cells));const value=items.length*(.25+density);if(value>score){score=value;best={node,items,tile};}}
 if(!best)throw new Error('Could not identify a map container. Export inspection so the adapter can be adjusted.');
 const {items,tile}=best,left=Math.min(...items.map(c=>c.r.left)),top=Math.min(...items.map(c=>c.r.bottom))-tile;

@@ -1,0 +1,37 @@
+# AWBW integration review — source evidence, not independent server verification
+
+Reviewed the user's `awbw-inspection-1741140.json` and `awbw-snapshot-1741140.json`. Raw uploads and account-specific snapshots are not committed to the repository.
+
+## Findings from the supplied public source
+
+- `/js/lib/game.js` creates `new WebSocket(`${wsUrl}/${wsServerBranch}/game/${gameId}`)` and sends JSON through `emitData(socket, data)` → `socket.send(JSON.stringify(data))` (around lines 1345 and 3071).
+- HTTP `POST /api/game/fetch_actions.php` receives `{ gameId, stateTime }` and returns actions missed while connecting (around line 1425). It is not the move submission endpoint.
+- Wait/move sends `{ action: 'Move', path, playerID, unitID }` (around line 1967). Paths are numeric nodes, converted through `x = node % maxX`, `y = floor(node / maxX)`.
+- Capture sends `{ action: 'Capt', path, playerID, unitID }` (around line 1872).
+- Attack sends `{ action: 'Fire', attacker: { playerID, unitID, path }, defender: { playerID, unitID } }` (around line 2465). Pipe seam attacks use a separate action.
+- Purchase sends `{ action: 'Build', playerID, unitID, buildingID }` (around line 2852). This unitID identifies a generic purchase type, not an existing battlefield unit.
+- End turn sends `{ action: 'End', playerID }` (around line 7567); response handling includes the `NextTurn` action. An outgoing End must not be treated as an acknowledged NextTurn.
+- Server WebSocket messages are parsed as JSON. Errors use `err`. Successful messages are iterated by object key and their events queued for response handlers (around lines 1374–1388). A transport send is not proof that the server accepted an order.
+- `/js/lib/map_renderer.js` renders terrain to a canvas, at 16 logical pixels per tile. The official selector is `#map-background`, inside `#gamemap`. Fog is a separate `#fog-canvas` layer at z-index 104; terrain is at 99. Buildings and units are DOM overlays.
+
+## Problems caught in our first bridge
+
+The uploaded HTTP evidence contains four requests and **no actual order submission/acknowledgment**. Our original inspector missed WebSocket traffic entirely. The snapshot contains only 72 sprite layers, lacks the terrain canvas, and includes sidebar icons; its 32×19 bounding box is not reliable map geometry.
+
+Version 0.3 therefore observes native WebSocket sends and receives, and captures the official terrain/fog canvases plus visible map images into a pixel frame using the canvas's native dimensions. Sidebar elements are excluded by the known map root. It exports no cookie/header values and creates no sockets or orders of its own. Legacy heuristic capture remains only for nonstandard fixtures/pages without the known canvas.
+
+The pixel frame is a read-only mirror, not structured state for issuing orders. It refreshes periodically; it does not promise smooth unit animations or independently verified fog rules. Screenshot capture can fail if the browser marks the canvas as tainted. Such failure is reported rather than silently dropping the canvas.
+
+## Verification status
+
+- Official frontend source contracts: reviewed.
+- Local movement/combat/capture/purchase/turn engine: tested, simplified practice rules only.
+- Canvas dimensions, fog stacking, sidebar exclusion, WebSocket observation, sanitization, and zero additional sends: tested with a source-shaped browser fixture.
+- Real server acknowledgments for native orders: not present in this export.
+- Authentication, active-player permissions, stale turns, duplicate submissions, game reconnection, and independently submitted orders: **not server verified**.
+
+Live orders stay disabled. Deployment remains on hold per the user's request.
+
+## Next evidence
+
+Install the updated bridge, reload the same game, and export another snapshot/inspection. It now captures the canvas and WebSocket traffic. Use the official game normally if desired; do not take an extra irreversible match action solely for collection. Observe order requests/response events when ordinary play provides them, or use a designated test match for controlled verification. No password or Netlify deployment is needed.

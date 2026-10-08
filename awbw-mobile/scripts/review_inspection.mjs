@@ -8,6 +8,8 @@ const state=contracts.filter(c=>c.responseSample&&/"(?:units|units_id|units_x|te
 const actions=contracts.filter(c=>c.requestSample?.action||/(?:move|attack|capture|end_?turn|build|buy|purchase|action|order)/i.test(c.path));
 const acknowledged=actions.filter(c=>c.status>=200&&c.status<300&&c.responseSample?.success===true);
 const rejected=actions.filter(c=>c.status>=400||c.status===0||c.responseSample?.success===false);
+const sockets=contracts.filter(c=>c.transport==='websocket');
+console.log(`WebSocket evidence: ${sockets.length} frames (${sockets.filter(c=>c.direction==='outgoing').length} sends, ${sockets.filter(c=>c.direction==='incoming').length} receives).`);
 console.log(`Inspection ${data.format}; ${contracts.length} observed requests; ${data.publicFiles?.length||0} public source files.`);
 console.log(`Visible map snapshot: ${data.snapshot?'present':'missing'}${data.snapshotError?' ('+data.snapshotError+')':''}`);
 console.log(`Structured game samples: ${state.length}; action candidates: ${actions.length}; explicit success responses: ${acknowledged.length}; rejected/network failures: ${rejected.length}.`);

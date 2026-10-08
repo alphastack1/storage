@@ -12,9 +12,9 @@ The supplied art pack is bundled: **530 unique files, 557 source records, 219 an
 
 `awbw-bridge.user.js` runs on the original AWBW game page and can:
 
-- Send a read-only rendering of visible map sprites to the hosted Field Command client in another tab, with source/origin-checked `postMessage` communication.
+- Send a read-only pixel frame of the official terrain canvas, fog, and visible map sprites to the hosted Field Command client in another tab, with source/origin-checked `postMessage` communication.
 - Export a rendered map snapshot for manual loading from the client’s Menu.
-- Observe requests the official interface already makes: method, path, parameter names, and JSON response types. Only whitelisted numeric/enum game-state and action examples are retained. Authentication values, arbitrary strings, cookies, headers, full HTML, inline scripts, and account credentials are not exported.
+- Observe HTTP requests and WebSocket frames the official interface already makes: method, path, parameter names, and JSON response types. Only whitelisted numeric/enum game-state and action examples are retained. Authentication values, arbitrary strings, cookies, headers, full HTML, inline scripts, and account credentials are not exported.
 - Export inspection data with public `.js`/`.css` source files retrieved without credentials, for implementing the real backend adapter.
 
 The bridge **does not submit game orders**. The live viewer is a DOM mirror, not a verified game-state API. HP, ownership, terrain semantics, fog logic, player identity, and turn permissions are not inferred. Unknown tiles/assets are visibly marked. Sprite container detection is heuristic and may fail on real AWBW markup; inspection exports still contain diagnostic information and public source when possible. The development environment cannot reach AWBW, so real-site integration and mutation contracts remain unverified. Use the original AWBW page for real orders.
@@ -88,3 +88,9 @@ npm run review-inspection -- /path/to/awbw-inspection-123.json
 ```
 
 This prints evidence coverage and missing live-order checks. It does not contact AWBW or submit commands. Independent live orders remain disabled until exact contracts, active-player permissions, stale/duplicate request behavior, server acknowledgments, and designated test-match operations are verified against the real site.
+
+## Source review update: bridge version 0.3
+
+The supplied inspection contains AWBW's actual public game client and map renderer. Orders are sent through WebSocket, and terrain is canvas-rendered. The old HTTP-only/DOM-image bridge did not capture either correctly. The updated bridge captures the official `#gamemap`/`#map-background` canvases (including fog layering) and native WebSocket traffic without creating sockets or orders. It exports a `field-command-snapshot-v2` pixel frame. See `docs/awbw-integration-review.md` for exact source-derived message contracts and verification limits.
+
+Another export from this updated inspector is needed to validate the corrected map capture and observe real order acknowledgments. The original uploaded export contains no order examples. Deployment is still on hold and live commands remain disabled. Source review and fixture tests are not represented as live server verification.
