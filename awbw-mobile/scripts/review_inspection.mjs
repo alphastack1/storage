@@ -14,5 +14,18 @@ console.log(`Inspection ${data.format}; ${contracts.length} observed requests; $
 console.log(`Visible map snapshot: ${data.snapshot?'present':'missing'}${data.snapshotError?' ('+data.snapshotError+')':''}`);
 console.log(`Structured game samples: ${state.length}; action candidates: ${actions.length}; explicit success responses: ${acknowledged.length}; rejected/network failures: ${rejected.length}.`);
 for(const c of actions.slice(0,15))console.log(`${c.method} ${c.path} — HTTP ${c.status}; fields: ${c.requestFieldNames.join(', ')}`);
+// Pair only adjacent action frames: same event type is evidence, not a request ID.
+const gameplay=sockets.filter(c=>c.direction==='outgoing'||Object.keys(c.responseSchema||{}).some(k=>['Move','Capt','Fire','Build','NextTurn','err'].includes(k)));
+let paired=0, exactMoves=0;
+for(let i=0;i<gameplay.length;i++){
+ const sent=gameplay[i];if(sent.direction!=='outgoing')continue;
+ const action=sent.requestSample?.action, expected=action==='End'?'NextTurn':action, received=gameplay[i+1];
+ if(received?.direction!=='incoming'||!Object.hasOwn(received.responseSchema||{},expected))continue;
+ paired++;
+ const result=received.responseSample?.Move, request=sent.requestSample, width=data.snapshot?.map?.width;
+ if(action==='Move'&&Number.isInteger(width)&&result?.unit?.units_id===request.unitID&&Array.isArray(result.path)&&Array.isArray(request.path)&&result.path.length===request.path.length&&result.path.every((p,j)=>p.y*width+p.x===request.path[j]))exactMoves++;
+}
+console.log(`Official action/event sequence matches: ${paired}/${actions.filter(c=>c.transport==='websocket').length}; movement samples with matching unit ID and full path: ${exactMoves}.`);
+console.log('Sequence matches lack request IDs and do not establish independent-client execution or duplicate protection.');
 console.log('\nLive orders remain UNVERIFIED. Observations from the official page are evidence, not proof that an independent client can safely submit orders.');
 console.log('Required next: read public source, map exact state/action contracts, verify active-player permissions and turn versions, confirm rejected/stale/duplicate orders, and test independent orders in a designated test match. No commands are sent by this review.');
