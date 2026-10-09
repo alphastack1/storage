@@ -1,100 +1,65 @@
 # Field Command
 
-A handheld-style browser client project for Advance Wars By Web. All files, artwork, tests, and deployment configuration are isolated in `awbw-mobile/`.
+A GBA-style browser interface for your existing Advance Wars By Web account and games. All project files stay in `awbw-mobile/` inside the storage repository.
 
-## Current behavior
+## Mobile setup
 
-Opening the site starts **River Crossing**, a local hotseat practice match rendered with the collected AWBW pixel art. It includes tap selection, movement previews, Wait/Attack/Capture commands, purchases at friendly bases, alternating turns, income, zoom/pan, keyboard/D-pad controls, optional synthesized UI sound, and optional full-screen mode. Practice progress is saved only in browser local storage. Rules are simplified and do not claim full Advance Wars or AWBW parity. No AWBW game is changed by practice.
+Use the same self-contained `awbw-bridge.user.js` on both platforms:
 
-The supplied art pack is bundled: **530 unique files, 557 source records, 219 animated files**. Friends do not collect or upload artwork. Original bytes, source URLs, and SHA-256 hashes remain in `assets/catalog.json`. Authorship and reuse terms are not yet verified; asset presence on AWBW is not treated as a license.
+1. **iPhone/iPad:** Install [Userscripts for Safari](https://apps.apple.com/us/app/userscripts/id1463298887), enable it in Safari extensions, and allow it on `awbw.amarriner.com`. Open the `.user.js` download URL in Safari and choose the installation prompt in Userscripts. Alternatively save the file to the folder selected in the Userscripts app. This follows the project's [iOS installation guide](https://github.com/quoid/userscripts#ios-ipados).
+2. **Android:** Use Firefox with [Tampermonkey](https://addons.mozilla.org/firefox/addon/tampermonkey/) or another page-context userscript manager available in your browser's add-on list, and install the same file. Chrome for Android does not run desktop Chrome extensions.
+3. Disable the earlier Field Command bridge/dashboard script if installed, or replace its contents with the new bundle. Keep only one Field Command game script active.
+4. Sign into AWBW normally in that browser, then open [Your Games](https://awbw.amarriner.com/yourgames.php). Field Command displays your game list. Open a game and its handheld view starts automatically in the same tab.
 
-## Live AWBW status
+Each friend installs the same file and uses their own AWBW account. The 530 unique image files are included in the download; nobody needs the asset collector, an asset ZIP, a password shared with the developer, or Netlify. There is no tab opt-in or repeated order-confirmation dialog.
 
-`awbw-bridge.user.js` runs on the original AWBW game page and can:
+The interface is tested at a phone viewport with touch emulation in Chromium. **Real Safari/iOS and Android browser/add-on behavior remains to be checked on devices.** Extension injection timing, page CSP, storage availability, and browser suspension can differ. The bridge can attach to the official existing socket if the manager runs after page scripts. A normal browser bookmark is appropriate; a home-screen PWA may run without its browser add-on and cannot be assumed to work.
 
-- Send a read-only pixel frame of the official terrain canvas, fog, and visible map sprites to the hosted Field Command client in another tab, with source/origin-checked `postMessage` communication.
-- Export a rendered map snapshot for manual loading from the client’s Menu.
-- Observe HTTP requests and WebSocket frames the official interface already makes: method, path, parameter names, and JSON response types. Only whitelisted numeric/enum game-state and action examples are retained. Authentication values, arbitrary strings, cookies, headers, full HTML, inline scripts, and account credentials are not exported.
-- Export inspection data with public `.js`/`.css` source files retrieved without credentials, for implementing the real backend adapter.
+## Playing
 
-The bridge **does not submit game orders**. The live viewer is a DOM mirror, not a verified game-state API. HP, ownership, terrain semantics, fog logic, player identity, and turn permissions are not inferred. Unknown tiles/assets are visibly marked. Sprite container detection is heuristic and may fail on real AWBW markup; inspection exports still contain diagnostic information and public source when possible. The development environment cannot reach AWBW, so real-site integration and mutation contracts remain unverified. Use the original AWBW page for real orders.
+Tap your ready unit, choose a highlighted destination, then tap **Wait** or **Capture**. Tap an empty production property you own and choose a unit to build. **Menu → End AWBW turn** sends the turn-ending order directly. Selecting a unit or destination only previews; choosing the action issues the real order once.
 
-A full replacement still needs the actual state/action contracts, verified stale-turn protection, capture/purchase rules, action acknowledgments, reconnect behavior, fog handling, and real-device tests. Actions are intentionally disabled in the live viewer until those requirements are met.
+Movement paths and capture eligibility come from AWBW's existing rule helpers. Purchases use its unit list, bans, labs, CO cost multiplier and funds. Commands use the official page's already authenticated WebSocket through `emitData`. No separate socket, password store or rules clone is used for live play. Board updates come from AWBW, with fog and visible sprites preserved.
 
-## Run and test
+The bridge blocks spectators, other players' turns, spent/unseen units, replay mode, ongoing animations, queued updates, disconnected sockets, changed/expired previews, duplicate requests and overlapping submissions. An uncertain outcome after timeout or disconnect locks further orders until you inspect AWBW and reload. It never retries a game command automatically.
+
+**Current live actions:** Move/Wait, Capture, Build, End. Combat, CO powers, transport actions, tag turns and teleport paths still use **AWBW controls ↗**, which returns to the original page in the same tab. This is not yet a complete live AWBW replacement.
+
+Native real-game recordings confirm the outgoing shapes and corresponding event sequence for these four actions. The new adapter/UI is tested against controlled server/browser fixtures, **not yet against AWBW's live server from the new controls**. No new orders were issued to the user's live match during development. Netlify deployment remains on hold.
+
+## Development
+
+Requirements: Node 18+, Python 3, Python Playwright and Chromium. No npm dependencies are required. From this folder:
 
 ```sh
-cd /workspace/storage/awbw-mobile
-npm run build
 npm run dev
-```
-
-Open http://localhost:5173. Run `npm test` in a second terminal. Engine tests use Node; browser tests require Python Playwright and Chromium. Tests use intercepted HTML/network fixtures and never submit real AWBW actions. They cover practice validation, combat/capture/purchases/turns, touch interaction and persistence, mobile layouts, image integrity, export/import, DOM capture, redacted request contracts, disabled live commands, and actual cross-origin window handshakes. Screenshot artifacts are ignored by Git.
-
-## Share with your friend
-
-Deploy the static site once. Both players use that URL; artwork is included. Local practice requires no extension. To view each player's real AWBW game, each installs the read-only bridge and signs into their own AWBW account. This is not yet a zero-install standalone AWBW client.
-
-### Netlify through Git
-
-Create a Netlify site from `alphastack1/storage`, using branch `field-command-awbw` and **base directory `awbw-mobile`**. The folder's `netlify.toml` defines command `npm run build`, output `dist`, and response headers. No environment variables or AWBW credentials are required.
-
-### Netlify through drag-and-drop
-
-`npm run package` builds `field-command-site.zip` in this project. Extract it and drag the resulting folder containing `index.html` onto https://app.netlify.com/drop while logged into your Netlify account. The resulting URL is usable by both players. This development session has no authenticated Netlify connection; no remote deployment has been performed.
-
-## Connect an actual match
-
-1. Install `awbw-bridge.user.js` in Tampermonkey (or a compatible userscript manager). Allow user scripts and AWBW site access.
-2. Open/reload a game on AWBW. In **Field Command · Read-only bridge**, choose **Open handheld view** and enter the deployed Field Command site URL.
-3. Keep the original AWBW tab open. The new tab receives visible sprites only; use the original site to issue actual orders.
-4. To help finish the adapter, choose **Export inspection** and provide that JSON to the developer. It includes public source plus observed request structure. If desired, use the official controls normally first so their requests can be observed. No need to take game actions solely for collection.
-5. If cross-tab communication is blocked, choose **Export snapshot**, then load it through Menu → Load AWBW snapshot in Field Command.
-
-Mobile support depends on the browser's userscript and popup support (for example, compatible Android browsers or Userscripts in Safari on iOS). Safari popup relationships and background tabs require real-device verification. The read-only viewer does not promise continuous polling when the browser suspends AWBW.
-
-## Files
-
-- `index.html`, `play.html`, `play.js`, `play.css`: main handheld client.
-- `tactics.js`: simplified local-only practice engine.
-- `snapshot.js`: strict read-only snapshot validation.
-- `awbw-bridge.user.js`, `bridge.html`: live bridge, inspection and installation.
-- `operations.html`, `app.js`, `harness.js`: earlier dashboard prototype and optional dashboard userscript.
-- `asset-library.html`: optional sprite workbench.
-- `asset-collector.user.js`, `scripts/import_assets.py`: developer asset collection/import tools, unnecessary for regular players.
-- `netlify.toml`: static deployment configuration.
-
-## Adding more artwork
-
-The collector captures publicly accessible images loaded by AWBW pages. It stores images locally in IndexedDB and exports a source-tracked ZIP. GIFs stay unchanged. Images over 2 MB or packs over 64 MB are skipped and reported. Discovery covers loaded resources and readable styles, not every asset on the site.
-
-```sh
-npm run import-assets -- /path/to/awbw-assets.zip
 npm run build
+npm test
+npm run package-mobile
 ```
 
-The importer validates all manifest paths and SHA-256 before writing inside `assets/`. Source URLs and attribution remain recorded. This is a developer maintenance step, not a setup requirement for friends.
+The server listens on port 5173. Browser tests use the running server. Build generates the self-contained userscript, static site in `dist/`, and optional desktop extension in `extension-dist/`. The mobile archive contains the script and installation guide. User game exports stay outside the repository.
 
-## Pre-deployment integration review
+`npm test` covers 24 Node tests and browser flows for practice, asset integrity/import, fog-filtered snapshots, official socket observation, origin/source checks, live order previews, direct Move/Capture/Build/End, rejection, cursor persistence and the same-tab mobile bundle. These checks do not simulate a real iPhone or authenticate against AWBW.
 
-Netlify deployment is on hold until the live integration is inspected. You can run the bridge directly on your logged-in AWBW game **without a Field Command site or Netlify**. Install the read-only bridge, reload the game, expand its panel, and choose Export inspection. Using the official controls normally while the inspector is installed can add state/order examples; no extra game action is necessary solely for collection.
-
-Version 0.2 exports whitelisted numeric/enum game-state and action values (for example unit IDs, x/y, HP, funds, and explicit success/failure), plus type schemas and public client source. Sensitive fields and arbitrary strings are excluded. Exported outcomes are observations of AWBW's official client, not evidence that independent orders have been tested. No password is needed; the original browser session stays on AWBW.
-
-Review an export locally:
+Review an export without sending anything:
 
 ```sh
-npm run review-inspection -- /path/to/awbw-inspection-123.json
+npm run review-inspection -- /path/to/awbw-inspection.json
 ```
 
-This prints evidence coverage and missing live-order checks. It does not contact AWBW or submit commands. Independent live orders remain disabled until exact contracts, active-player permissions, stale/duplicate request behavior, server acknowledgments, and designated test-match operations are verified against the real site.
+## Optional desktop Chrome extension
 
-## Source review update: bridge version 0.3
+```sh
+npm run package-extension
+```
 
-The supplied inspection contains AWBW's actual public game client and map renderer. Orders are sent through WebSocket, and terrain is canvas-rendered. The old HTTP-only/DOM-image bridge did not capture either correctly. The updated bridge captures the official `#gamemap`/`#map-background` canvases (including fog layering) and native WebSocket traffic without creating sockets or orders. It exports a `field-command-snapshot-v2` pixel frame. See `docs/awbw-integration-review.md` for exact source-derived message contracts and verification limits.
+Extract `field-command-chrome.zip`, open `chrome://extensions`, enable Developer mode, choose **Load unpacked**, and select the extracted folder containing `manifest.json`. The popup opens your AWBW games/account; the game uses the same handheld interface. Disable the userscript when using the extension to avoid duplicate hooks. This package is for desktop Chrome, not phone Chrome.
 
-Another export from this updated inspector is needed to validate the corrected map capture and observe real order acknowledgments. The original uploaded export contains no order examples. Deployment is still on hold and live commands remain disabled. Source review and fixture tests are not represented as live server verification.
+`npm run test:extension` exercises an actual MV3 installation separately. This cloud browser's administrator policy blocks loading unpacked extensions, so that installed-extension test is **blocked, not passed** here. The package is an optional preview; it has not been published to the Chrome Web Store.
 
-## Latest evidence
+## Optional static hosting
 
-The corrected canvas capture has now been confirmed by the user's real export: 21×19 tiles, complete terrain/fog/building/unit frame. The handheld client successfully imports that actual snapshot. Incoming WebSocket Pause/JoinRoom/ActivityUpdate messages were observed, but this export contains no outgoing game orders or their results. The installed version 0.3 inspector can already observe such events during normal play; another empty reload/export is not needed. Remaining verification requires a real native command and its response, preferably from a designated test match. Version 0.4 adds optional visible unit details and fog filtering; live orders stay disabled.
+`npm run package` generates `field-command-site.zip` for Netlify Drop. Static hosting provides practice, downloads and optional cross-tab viewing. It cannot read AWBW's cookies or control a cross-origin login iframe by itself. Live play requires the local browser integration described above. No Netlify deployment was performed.
+
+The earlier `operations.html` dashboard and asset workbench remain as development tools. The original images' authorship/reuse terms are not established by their availability on AWBW; source URLs and hashes remain in `assets/catalog.json`.

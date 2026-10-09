@@ -5,6 +5,8 @@ import {schema,responseSample,requestSample} from '../inspection.js';
 test('game samples preserve coordinates, HP, funds, ownership, and explicit outcomes',()=>{
  const data={game:{games_id:123,day:4,units:{7:{units_id:7,units_x:3,units_y:4,hp:8,fuel:70,army:'os',type:'infantry'}},players:[{players_id:9,funds:8000}],success:false},authToken:'secret',session:'secret',csrf:'secret'};
  const s=responseSample(data);assert.equal(s.game.units[7].units_x,3);assert.equal(s.game.units[7].hp,8);assert.equal(s.game.players[0].funds,8000);assert.equal(s.game.success,false);assert.ok(!('authToken' in s));
+ const events=responseSample({Build:{action:'Build',newUnit:{units_id:11,units_players_id:7,units_name:'Tank',units_x:2,units_y:3,sessionToken:'secret'}},Capt:{action:'Capt',buildingInfo:{buildings_id:50,buildings_x:2,buildings_y:3}},NextTurn:{action:'NextTurn',day:12,nextPId:8}});
+ assert.equal(events.Build.newUnit.units_players_id,7);assert.equal(events.Capt.buildingInfo.buildings_id,50);assert.equal(events.NextTurn.nextPId,8);assert.ok(!JSON.stringify(events).includes('secret'));
 });
 test('nested credentials, arbitrary strings, email, and dynamic secrets are excluded',()=>{
  const data={data:{units:[{id:7,token:'secret',privateKey:'secret',password:'secret',name:'private-username',health:9}],players:[{email:'secret@example.com',name:'someone',id:1}],message:'Bearer secret',unexpected:'secret'}};

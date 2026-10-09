@@ -10,7 +10,7 @@ stub='''window.__openedSockets=0;window.__sent=[];window.WebSocket=class extends
 with sync_playwright() as p,tempfile.TemporaryDirectory() as temp:
  b=p.chromium.launch(headless=True,executable_path=shutil.which('chromium'),args=['--no-sandbox'])
  c=b.new_context(accept_downloads=True)
- c.add_init_script(stub+'\n'+(ROOT/'awbw-bridge.user.js').read_text())
+ c.add_init_script(stub+"\ntry{sessionStorage.setItem('field-command-original','1')}catch{};\n"+(ROOT/'awbw-bridge.user.js').read_text())
  c.route('https://awbw.amarriner.com/**',lambda r:r.fulfill(status=200,content_type='text/html',body=html))
  page=c.new_page();page.goto('https://awbw.amarriner.com/game.php?games_id=1741140')
  page.evaluate("""() => {const terrain=document.querySelector('#map-background').getContext('2d');terrain.fillStyle='#44aa22';terrain.fillRect(0,0,304,272);const fog=document.querySelector('#fog-canvas').getContext('2d');fog.fillStyle='#182030';fog.fillRect(0,0,16,16);} """)

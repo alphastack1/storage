@@ -43,7 +43,7 @@ with sync_playwright() as p, tempfile.TemporaryDirectory() as temp:
     context.route('https://awbw.amarriner.com/**',route)
     awbw=context.new_page()
     # Run at document-start as the userscript manager would.
-    context.add_init_script((ROOT/'awbw-bridge.user.js').read_text())
+    context.add_init_script("try{sessionStorage.setItem('field-command-original','1')}catch{};\n"+(ROOT/'awbw-bridge.user.js').read_text())
     awbw.goto('https://awbw.amarriner.com/game.php?games_id=1741140')
     awbw.locator('#fc-bridge-tool summary').click()
     awbw.evaluate("fetch('/state.php?games_id=1741140', {headers:{Authorization:'fixture-secret'}}).then(r=>r.json())")
